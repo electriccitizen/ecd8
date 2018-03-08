@@ -45,7 +45,8 @@ jobs:
       - run: composer global require drush/drush:8.*
       - run: sudo service apache2 restart
       # Set up Drupal
-      - run: bash setup.sh
+      #- run: bash setup.sh
+      - run: composer install
       - run: echo 'export PATH=~/.composer/vendor/bin:$PATH' >> $BASH_ENV
       - run: cp .circleci/tests/circle/settings.php web/sites/default/settings.local.php
       - run: ls web/sites/default
@@ -61,7 +62,7 @@ jobs:
       - run:
           name: Install site
           # We add 'install_configure_form.enable_update_status_module=NULL" to disable email being sent.
-          command: drush @test si standard install_configure_form.enable_update_status_module=NULL -y
-      - run:
-          name: Run tests
-          command: cd web/core; ../../vendor/bin/phpunit ../modules/custom/utexas_qualtrics_filter/tests/src/Unit/FilterQualtricsTest.php
+          command: drush @test si oc install_configure_form.enable_update_status_module=NULL -y
+      #- run:
+      #    name: Run tests
+      #    command: cd web/core; ../../vendor/bin/phpunit ../modules/custom/utexas_qualtrics_filter/tests/src/Unit/FilterQualtricsTest.php
