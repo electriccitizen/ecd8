@@ -58,11 +58,13 @@ jobs:
       - run: drush site-alias @self --root=/home/circleci/site_build/web --full --with-optional
       - run: drush site-alias @self --root=/home/circleci/site_build/web --full --with-optional >> ~/.drush/test.aliases.drushrc.php
       - run: drush status --root=/home/circleci/site_build/web
+      - run: drush si oc --root=/home/circleci/site_build/web -y
       # Install Drupal.
-      - run:
-          name: Install site
+      #- run:
+      #    name: Install site
           # We add 'install_configure_form.enable_update_status_module=NULL" to disable email being sent.
-          command: drush @test si oc install_configure_form.enable_update_status_module=NULL -y
+
+      #    command: drush @test si oc -y
       #- run:
       #    name: Run tests
       #    command: cd web/core; ../../vendor/bin/phpunit ../modules/custom/utexas_qualtrics_filter/tests/src/Unit/FilterQualtricsTest.php
