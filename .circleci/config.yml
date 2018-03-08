@@ -1,0 +1,67 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/site_build
+    docker:
+      - image: circleci/php:7.1-apache-node
+        environment:
+          - MYSQL_HOST=127.0.0.1
+      - image: mysql:5.7
+        environment:
+          - MYSQL_USER=root
+          - MYSQL_ROOT_PASSWORD=ubuntu
+          - MYSQL_PASSWORD=
+          - MYSQL_ALLOW_EMPTY_PASSWORD=true
+          - MYSQL_DATABASE=circle_test
+          - MYSQL_ROOT_HOST=%
+      - image: selenium/standalone-chrome:3.1.0
+    steps:
+      - run:
+          name: Install PHP extensions
+          command: sudo docker-php-ext-install pdo_mysql
+      - run:
+          name: Install extension
+          command: sudo apt-get install -y libpng-dev
+      - run:
+          name: Install PHP Extensions
+          command: sudo docker-php-ext-install gd
+      - run:
+          name: Install Composer
+          command: 'curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer'
+      - run:
+          name: Display versions
+          command: |
+            php -v
+            composer --version
+      - run:
+          name: Install mysql-client
+          command: |
+            sudo apt-get install mysql-client
+      - checkout
+      - run: php -v
+      - run: sudo cp .circleci/tests/circle/circle.conf /etc/apache2/sites-available
+      - run: sudo a2ensite circle.conf
+      - run: sudo a2enmod rewrite
+      - run: composer global require drush/drush:8.*
+      - run: sudo service apache2 restart
+      # Set up Drupal
+      - run: bash setup.sh
+      - run: echo 'export PATH=~/.composer/vendor/bin:$PATH' >> $BASH_ENV
+      - run: cp .circleci/tests/circle/settings.php web/sites/default/settings.local.php
+      - run: ls web/sites/default
+      # Add alias to drush configuration.
+      - run: mkdir ~/.drush
+      - run: echo '<?php' > ~/.drush/test.aliases.drushrc.php
+      - run: drush status
+      - run: pwd
+      - run: drush site-alias @self --root=/home/circleci/site_build/web --full --with-optional
+      - run: drush site-alias @self --root=/home/circleci/site_build/web --full --with-optional >> ~/.drush/test.aliases.drushrc.php
+      - run: drush status --root=/home/circleci/site_build/web
+      # Install Drupal.
+      - run:
+          name: Install site
+          # We add 'install_configure_form.enable_update_status_module=NULL" to disable email being sent.
+          command: drush @test si standard install_configure_form.enable_update_status_module=NULL -y
+      - run:
+          name: Run tests
+          command: cd web/core; ../../vendor/bin/phpunit ../modules/custom/utexas_qualtrics_filter/tests/src/Unit/FilterQualtricsTest.php
