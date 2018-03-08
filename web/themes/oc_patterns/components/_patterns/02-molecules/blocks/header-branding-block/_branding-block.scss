@@ -1,0 +1,37 @@
+/* =================
+   BRANDING BLOCK
+=================== */
+
+.block--system-branding{
+	a{
+		img{
+			border: 1px solid transparent;
+			display: block;
+			width: 100%;
+		}
+		.site-name {
+			font-size: 24px;
+			color: $white;
+			display: none;
+		}
+		&:hover,&:focus{
+			text-decoration: none;
+			img{
+				border-color: $borderRule;
+			}
+			.site-name{
+				color: $black;
+			}
+		}
+		@include tab{
+			.site-name{
+				font-size: 32px;
+			}
+		}
+	}//end logo a
+
+	//tagline / slogan
+	.tagline{
+		display: none;
+	}
+}

@@ -1,0 +1,177 @@
+/* ===============
+   LIGHTBOX GALLERY WIDGET
+==================== */
+.paragraph--type--lightbox-gallery{
+	.wrapper{
+		max-width: $maxWidth !important;
+		text-align: center;
+	}
+	//hide the content before lightbox
+	.featherlight-hidden{
+		display: none;
+	}
+	//Image lighbox
+	.image-gal{
+		margin: 0 10px 20px;
+		max-width: 250px;
+		display: inline-block;
+		overflow: hidden;
+		img{
+			width: 100%;
+			//from 01-mixins.scss
+			@include imageHover;
+		}
+
+	}//end image lightbox
+}//end lightbox
+
+//FEATHERLIGHT OVERLAY THEMING
+.node .featherlight{
+	.featherlight-content{
+		background: $siteBack;
+		padding: 0;
+		border-bottom: 0;
+		margin-left: 5%;
+		margin-right: 5%;
+
+		//controls
+		.featherlight-close-icon{
+			background: none;
+			font-size: 24px;
+			color: $white;
+			text-shadow: 2px 2px 3px $transBlack;
+			height: 32px;
+			width: 32px;
+			font-family: $bodyfont;
+			&:hover{
+				background: rgba(255,255,255,0.15);
+				text-shadow: 2px 2px 3px $black;
+			}
+		}
+		.featherlight-previous{
+			left: 0;
+			top: 0;
+			right: auto;
+			width: 15%;
+			min-width: 60px;
+			span{
+				display: block;
+				font-size: 40px;
+				width: 60px;
+				height: 80px;
+				left: 0;
+				text-shadow: 2px 2px 2px $transBlack;
+			}
+			&:hover{
+				background: rgba(255,255,255,0.15);
+				span{
+					text-shadow: 2px 2px 3px $black;
+				}
+			}
+		}//end previous
+		.featherlight-next{
+			right: 0;
+			top: 0;
+			left: auto;
+			width: 15%;
+			min-width: 60px;
+			span{
+				display: block;
+				font-size: 40px;
+				width: 60px;
+				height: 80px;
+				left: auto;
+				right: 0;
+				text-shadow: 2px 2px 2px $transBlack;
+			}
+			&:hover{
+				background: rgba(255,255,255,0.15);
+				span{
+					text-shadow: 2px 2px 3px $black;
+				}
+			}
+		}//end next
+
+		img{
+			display: block;
+		}
+		figcaption{
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			z-index: 30;
+			background: rgba(35,35,35,0.6);
+			color: $white;
+			padding: .5em 1em;
+		}
+
+		.gallery-text{
+			max-width: $maxWidthText;
+			padding: 2em 3em;
+		}
+	}//end featherlight content
+
+	//switch controls to dark for text galleries
+	&.darken{
+		.featherlight-content{
+			.featherlight-close-icon,.featherlight-previous,.featherlight-next{
+				color: rgba(35,35,35,0.6);
+				text-shadow: 2px 2px 3px $lightGray;
+				span{
+					color: rgba(35,35,35,0.6);
+					text-shadow: 2px 2px 3px $lightGray;
+				}
+				&:hover{
+					color: $black;
+					text-shadow: 2px 2px 3px rgba(35,35,35,0.6);
+					span{
+						color: $black;
+						text-shadow: 2px 2px 3px rgba(35,35,35,0.6);
+					}
+				}
+			}
+		}
+	}//end darken
+}//end featherlight
+
+/* random entrance scripts (lightbox.js) */
+.paragraph--type--lightbox-gallery{
+	.image-gal{
+		.view-mode-large-thumb{
+			//from 01-mixins.scss
+			@include opacity(0);
+		}
+		&:nth-of-type(4n+1){
+			.view-mode-large-thumb.randomEntrance{
+				//from 02-animations.scss
+				@include animation('fadeIn .1s .9s forwards');
+			}
+		}
+		&:nth-of-type(4n+2){
+			.view-mode-large-thumb.randomEntrance{
+				//from 02-animations.scss
+				@include animation('fadeIn 1.3s .9s forwards');
+			}
+		}
+		&:nth-of-type(4n+3){
+			.view-mode-large-thumb.randomEntrance{
+				//from 02-animations.scss
+				@include animation('fadeIn .7s .9s forwards');
+			}
+		}
+		&:nth-of-type(4n+4){
+			.view-mode-large-thumb.randomEntrance{
+				//from 02-animations.scss
+				@include animation('fadeIn 1.8s .9s forwards');
+			}
+		}
+	}//end a.swipebox
+}//end random entrance lightbox gallery
+
+/* PATTERN LAB ONLY
+-------------------- */
+.pl .image-gal{
+	max-width: 250px;
+}
+

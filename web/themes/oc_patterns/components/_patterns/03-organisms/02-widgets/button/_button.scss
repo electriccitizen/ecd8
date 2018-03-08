@@ -1,0 +1,58 @@
+/* =============
+   BUTTON WIDGET
+================ */
+.paragraph--type--buttons{
+	text-align: center;
+	ul{
+		@include listReset;
+		@include safeFlex(row,wrap,null,null);
+		li{
+			max-width: 350px;
+			margin: 0 20px 20px;
+		}
+	}
+
+	//links		
+	.button-widget{
+		@include transThreeAll;
+		@include button;
+		padding: .75em 2em;
+		min-width: 200px;
+		line-height: 1em;
+		color: $white;
+		text-decoration: none;
+		@include larger;
+
+		//button colors
+		&.default,&.link{
+			background: $buttonBack;
+			color: $black;
+			&:hover,&:focus{
+				background: $buttonBackHover;
+				color: $white;
+			}
+		}
+		&.orange{
+			background: $gold;
+			color: $black;
+			&:hover,&:focus{
+				background: $orange;
+				color: $white;
+			}
+		}
+		&.blue{
+			background: $blue;
+			&:hover,&:focus{
+				background: $darkBlue;
+			}
+		}
+		&.darkGrey{
+			background: $midGrey;
+			&:hover,&:focus{
+				background: $black;
+			}
+		}
+	}//end button-widget (links)
+
+}//end paragraph-button-widget
+

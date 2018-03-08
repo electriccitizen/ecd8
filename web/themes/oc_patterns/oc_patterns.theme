@@ -1,0 +1,105 @@
+<?php
+
+/**
+ * @file
+ * Functions to support theming in the OC Subtheme.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Template\Attribute;
+use Drupal\taxonomy\Entity\Term;
+
+//alter viewport metatag to prevent user scaling (solves select list autozoom)
+function oc_patterns_page_attachments_alter(array &$page){
+  $viewport = [
+    '#type' => 'html_tag',
+    '#tag' => 'meta',
+    '#attributes' => [
+      'name' => 'viewport',
+      'content' => 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no',
+    ],
+  ];
+  $page['#attached']['html_head'][] = [$viewport, 'viewport'];
+}
+
+
+function oc_patterns_preprocess_field(&$variables, $hook) {
+  if ($variables['element']['#object']->bundle() == 'admin_view_placer') {
+        $view_name = str_replace(' ','_',strtolower($variables['element']['#object']->get('field_view_machine_name')->value));
+        $display_name = str_replace(' ','_',strtolower($variables['element']['#object']->get('field_display_machine_name')->value)); 
+        $view = views_embed_view($view_name,$display_name);  
+        $view_output = \Drupal::service('renderer')->render($view);  
+        $variables["viewfield"] = $view_output;
+  }elseif ($variables['element']['#object']->bundle() == 'slideshow') { 
+        //ksm($variables);
+        $paragraph_id = $variables['element']['#object']->id(); 
+        $view = views_embed_view('oc_widgets', 'slideshow',$paragraph_id);  
+        $view_output = \Drupal::service('renderer')->render($view);  
+        $variables["viewfield"] = $view_output;
+  }elseif ($variables['element']['#object']->bundle() == 'news_by_category') { 
+        //ksm($variables);
+        $paragraph_id = $variables['element']['#object']->id(); 
+        $view = views_embed_view('oc_widgets', 'news_by_category',$paragraph_id);  
+        $view_output = \Drupal::service('renderer')->render($view);  
+        $variables["viewfield"] = $view_output;
+  }elseif ($variables['element']['#object']->bundle() == 'event_by_category') { 
+        //ksm($variables);
+        $paragraph_id = $variables['element']['#object']->id(); 
+        $view = views_embed_view('oc_widgets', 'events_by_category',$paragraph_id);  
+        $view_output = \Drupal::service('renderer')->render($view);  
+        $variables["viewfield"] = $view_output;
+  }elseif ($variables['element']['#object']->bundle() == 'landing_page'){
+        //add landing page breadcrumbs as a variable
+        $block_manager = \Drupal::service('plugin.manager.block');
+        $config = [];
+        $plugin_block = $block_manager->createInstance('system_breadcrumb_block', $config);
+        $access_result = $plugin_block->access(\Drupal::currentUser());
+                if (is_object($access_result) && $access_result->isForbidden() || is_bool($access_result) && !$access_result) {
+          // You might need to add some cache tags/contexts.
+          return [];
+        }
+        $render = $plugin_block->build();
+        $variables['landing_crumbs'] = $render;
+  }
+}
+
+// Block suggestions for custom block bundles.
+function oc_patterns_theme_suggestions_block_alter(array &$suggestions, array $variables) {
+  // Block suggestions for custom block bundles.
+  if (isset($variables['elements']['content']['#block_content'])) {
+    $block_name = str_replace(' ','_',strtolower($variables['elements']['content']['#block_content']->label()));
+    array_splice($suggestions, 1, 0, 'block__' . $variables['elements']['content']['#block_content']->bundle());
+    array_splice($suggestions, 2, 0, 'block__' . $block_name);
+  }
+}
+
+//find node title for custom breadcrumbs and other blocks
+function oc_patterns_preprocess_block(&$variables) {
+  //find the title of the node the block is on
+  $node = \Drupal::routeMatch()->getParameter('node');
+  if ($node){
+    $nodetitle = $node->getTitle();
+    $variables['nodetitle'] = $nodetitle;
+  }
+}
+
+//set theme suggestions for content types and tax vocabularies
+function oc_patterns_theme_suggestions_page_alter(array &$suggestions, array $variables, $hook) {
+  // Try to get the node, so we can check if we're on the node page.
+  $node = Drupal::request()->attributes->get('node');
+  if ($node) {
+    $suggestions[] = 'page__' . $node->getTYpe();
+  }
+  if (\Drupal::routeMatch()->getRouteName() == 'entity.taxonomy_term.canonical' && $tid = \Drupal::routeMatch()->getRawParameter('taxonomy_term')) {
+    $term = Term::load($tid);
+    $suggestions[] = 'page__taxonomy__' . $term->getVocabularyId();
+  }
+}
+
+// Paragraph theme suggestions for id by type (useful for custom code widgets).
+function oc_patterns_theme_suggestions_paragraph_alter(array &$suggestions, array $variables) {
+  $paragraph = $variables['elements']['#paragraph'];
+  $id = $paragraph->id();
+  array_push($suggestions, 'paragraph__' . $paragraph->getType() . '__' . $id);
+}
+

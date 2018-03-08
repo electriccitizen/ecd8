@@ -1,0 +1,101 @@
+/* =================
+	SITE HEADER
+=================== */
+
+.layout-container > header {
+	background: $gold;
+	& > div{
+		padding: 10px 20px;
+		@include paddedContent;
+		@include auto;
+		position: relative;
+		@include safeFlex(row,wrap,null,center);
+	}
+}//end layout container
+
+
+/* BRANDING BLOCK PLACEMENT
+------------------- */
+.block--system-branding{
+	//leave room for search toogle and menu hamburger on mobile
+	@include calc(width, "100% - 70px");
+	position: relative;
+	z-index: 10;
+
+	//set width at desktop
+	@include deskMenu{
+		width: 300px;
+	}
+
+	a{
+		img{
+			max-width: 160px;
+			margin-right: 5px;
+			@include deskMenu{
+				max-width: 100%;
+			}
+		}
+	}
+}//end branding block
+
+
+/* SEARCH BLOCK PLACEMENT
+------------------- */
+.block-search-form-block{
+	position: static;
+	display: inline-block;
+	text-align: right;
+
+	//set width at desktop
+	@include deskMenu{
+		@include calc(width, "100% - 300px");
+	}
+
+	//search toggler
+	.t-search{
+		position: absolute;
+		top: 17px;
+		right: 20px;
+		@include deskMenu{
+			right: 25px;
+			top: 13px;
+		}
+	}
+}//end search block
+
+
+/* MAIN NAVIGATION BLOCK
+------------------------ */
+.block-superfishmain{
+	text-align: right;
+
+	//desktop position
+	@include deskMenu{
+		width: 100%;
+		margin: 10px 0 0 -10px;
+		vertical-align: middle;
+		text-align: left;
+
+		//when menu alignment right variable is used
+		&.right{
+			text-align: right;
+			margin: 10px -15px 0 0;
+		}
+
+		//when menu alignment center variable is used
+		&.center{
+			width: 100%;
+			text-align: center;
+			position: static;
+			margin: 0;
+		}
+	}//end deskMenu
+	
+}//end main nav
+
+
+/* PATTERN LAB ONLY
+------------------- */
+.pl header .block-superfishmain .sf-hidden{
+	display: none;
+}

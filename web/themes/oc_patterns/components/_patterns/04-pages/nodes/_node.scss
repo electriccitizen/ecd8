@@ -1,0 +1,40 @@
+/* ===============
+   NODES GLOBAL
+=================== */
+@mixin mainContentSide{
+	//body
+	.block-entity-fieldnodebody{
+		max-width: $maxWidth;
+		//from 01-mixins.scss
+		@include auto;
+		margin-bottom: 2em;
+	}
+	.block-entity-fieldnodefield-oc-widgets{
+		max-width: $maxWidth;
+		//from 01-mixins.scss
+		@include auto
+	}
+}
+
+@mixin mainContent{
+	//body
+	.block-entity-fieldnodebody{
+		max-width: $maxWidthText;
+		//from 01-mixins.scss
+		@include auto;
+		margin-bottom: 2em;
+	}
+	.block-entity-fieldnodefield-oc-widgets{
+		max-width: $maxWidth;
+		//from 01-mixins.scss
+		@include auto
+	}
+}
+
+
+/* unpub NODES
+---------------------- */
+.node--unpub{
+	background: $unpub;
+	border-top: 20px solid $unpubDark;
+}

@@ -1,0 +1,179 @@
+/* ============
+   HEADINGS
+============== */
+//h1 sizes
+$h1Sm: 32px;
+$h1Mid: 46px;
+$h1Lg: 60px;
+
+//h2 sizes
+$h2Sm: 26px;
+$h2Md: 29px;
+$h2Lg: 32px;
+
+//h3 sizes
+$h3Sm: 23px;
+$h3Mid: 26px;
+
+//h4 sizes
+$h4Sm: 22px;
+
+//h5 sizes
+$h5Sm: 20px;
+
+//h6 sizes
+$h6Sm: 18px;
+
+/* HEADING MIXINS
+------------------ */
+@mixin headerGlobals{
+	line-height: 1.15em;
+	margin-bottom: .5em;
+	margin-top: 0;
+	font-weight: $heavy;
+	font-family: $header;
+	font-feature-settings: "liga", "dlig";
+}
+
+
+@mixin heading1{
+	@include headerGlobals;
+	font-family: $display-header;
+	font-size: $h1Sm;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	@include tab{
+		font-size: $h1Mid;
+	}
+	@include maxWidth{
+		font-size: $h1Lg;
+	}
+}
+
+@mixin heading2 {
+	@include headerGlobals;
+	font-size: $h2Sm;
+	@include tab{
+		font-size: $h2Md;
+	}
+	@include maxWidth{
+		font-size: $h2Lg;
+	}
+}
+
+@mixin heading3{
+	@include headerGlobals;
+	font-size: $h3Sm;
+	@include tab{
+		font-size: $h3Mid;
+	}
+}
+
+@mixin heading4{
+	@include headerGlobals;
+	font-size: $h4Sm;
+}
+
+@mixin heading5{
+	@include headerGlobals;
+	font-size: $h5Sm;
+}
+
+@mixin heading6{
+	@include headerGlobals;
+	font-size: $h6Sm;
+}
+
+@mixin blockTitle{
+	@include headerGlobals;
+	font-size: 20px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	text-align: center;
+	max-width: $maxWidth;
+	//from 01-mixins.scss
+	@include auto;
+}
+
+
+/* HEADING STYLING
+------------------- */
+h1 {
+	@include heading1;
+}
+
+h2:not(.block-title):not(.widget-title){
+	@include heading2;
+}
+
+h3{
+	@include heading3;
+}
+
+h4{
+	@include heading4;
+}
+
+h5{
+	@include heading5;
+}
+
+h6{
+	@include heading6;
+}
+
+h2+ul, h3+ul, h4+ul, h5+ul, h6+ul {
+	margin-top: 0;
+}
+
+
+/* BLOCK AND WIDGET HEADINGS
+-------------------------- */
+.block-title,.widget-title{
+	@include blockTitle;
+	.block-region-sidebar &{
+		text-align: left;
+		max-width: 100%;
+	}
+}
+
+
+/* PATTERN LAB ONLY
+---------------------- */
+.pl{
+	h1{
+		font-size: $h1Sm;
+		&.header-mid{
+			font-size: $h1Mid;
+		}
+		&.header-lg{
+			font-size: $h1Lg;
+		}
+	}//end h1
+	h2:not(.block-title):not(.widget-title){
+		font-size: $h2Sm;
+		&.header-mid{
+			font-size: $h2Md;
+		}
+		&.header-lg{
+			font-size: $h2Lg;
+		}
+	}//end h2
+	h3{
+		font-size: $h3Sm;
+		&.header-mid{
+			font-size: $h3Mid;
+		}
+	}//end h1
+	h4{
+		font-size: $h4Sm;
+	}//end h4
+	h5{
+		font-size: $h5Sm;
+	}//end h5
+	h6{
+		font-size: $h6Sm;
+	}//end h6
+}//end pl
+
+

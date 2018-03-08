@@ -1,0 +1,75 @@
+/* =================
+   TERM - TAGS
+================== */
+.layout-content.tags{ 
+	.breadcrumb{
+		padding-left: 0;
+		padding-right: 0;
+		margin-bottom: 2em;
+	}
+	
+	.view-content{
+		margin-top: 40px;
+		@include threeColumn(null,null,20px);
+		@include bleed(20px);
+		.views-row{
+			margin-bottom: 4em;
+
+			//add random fade-in 
+			.blog-teaser{
+				@include opacity(0);
+			}
+			&:nth-of-type(4n+1){
+				.blog-teaser{
+					@include animation('fadeIn .1s 1s ease forwards');
+				}
+			}
+			&:nth-of-type(4n+2){
+				.blog-teaser{
+					@include animation('fadeIn 1.1s 1s ease forwards');
+				}
+			}
+			&:nth-of-type(4n+3){
+				.blog-teaser{
+					@include animation('fadeIn .7s 1s ease forwards');
+				}
+			}
+			&:nth-of-type(4n+4){
+				.blog-teaser{
+					@include animation('fadeIn 2s 1s ease forwards');
+				}
+			}
+
+		}//end views row
+	}//end view-content
+
+	.blog-teaser{
+		position: relative;
+		border: 1px solid $borderRule;
+		padding: 1em 1em 2.5em;;
+		.date{
+			@include textDate;
+		}
+		.author{
+			@include textDate;
+		}
+		.body{
+			margin-top: 1em;
+		}
+		//read more button at bottom
+		.post-link{
+			@include button;
+			background: $link;
+			position: absolute;
+			bottom: 0;
+			left: 50%;
+			margin-bottom: 0;
+			@include translate(-50%, 50%);
+			white-space: pre;
+			&:hover,&:focus{
+				background: $hoverLink;
+				@include translate(-50%, 50%);
+			}
+		}
+	}//end blog tags
+}//end tags term page

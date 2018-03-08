@@ -1,0 +1,237 @@
+/**
+ * @file
+ * Visual styles for a resizable textarea.
+ */
+
+
+/* style media image fields inside admin widgets */
+.field--widget-entity-reference-paragraphs img{
+  max-width: 100%;
+  height: auto;
+}
+
+.field--widget-entity-reference-paragraphs .item-container.rendered-entity{
+  width: 100%;
+}
+.field--widget-entity-reference-paragraphs .item-container > input{
+  display: inline-block;
+}
+.field--widget-entity-reference-paragraphs .view-mode-media-thumbnail{
+  width: 100%;
+
+}
+
+
+/*  ADMIN REMINDERS
+------------------- */
+.reminder{
+  position: fixed;
+  bottom: 50px;
+  right: -350px;
+  background: #02acd7;
+  color: #fff;
+  z-index: 20;
+  box-shadow: 3px 3px 0 #d2d2d2;
+  padding: 10px 20px;
+  max-width: 300px;
+}
+.reminder .close{
+  display: block;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  background: url(../../images/reminder-close.png) no-repeat center center;
+  background-size: 12px 12px;
+}
+.reminder .close:hover{
+  background: url(../../images/reminder-close-hover.png) no-repeat center center;
+}
+
+
+/* paragraph add buttons 
+------------------------- */
+.field--widget-paragraphs:after{
+  content: '';
+  display: block;
+  clear: both;
+}
+
+/* WIDGET CONTENT SPACING
+-------------------------- */
+.paragraphs-content{
+  margin-bottom: 1em;
+}
+
+/* widget helptext
+------------------- */
+.field--widget-paragraphs .description strong span{
+  color: #dd241b ;
+}
+
+.field--widget-paragraphs .paragraphs-tabs-wrapper input.field-add-more-submit:not([value="Add another item"]){
+  padding-left: 30px;
+  border: 2px solid #02acd7;
+  color: #535353;
+  border-radius: 0;
+  box-shadow: 3px 3px 0 #d2d2d2;
+  float: left;
+  background-position: 2px 0 !important;
+  margin-right: 15px;
+}
+
+.field--widget-paragraphs .paragraphs-tabs-wrapper .clearfix{
+  margin-bottom: 2em;
+}
+
+.field--widget-paragraphs .paragraphs-tabs-wrapper input.field-add-more-submit:hover{
+  border-color: #005b8a !important;
+  background-color: rgba(205,232,246,0.3) !important;
+}
+
+.field--widget-paragraphs .paragraphs-tabs-wrapper input[value="Add Accordion Group"]{
+  background: url(../icons/svg/accordion.svg) no-repeat;
+}
+
+.field--widget-paragraphs .paragraphs-tabs-wrapper input[value="Add Accordion Item"]{
+  background: url(../icons/svg/accordion.svg) no-repeat;
+}
+
+.field--widget-paragraphs .paragraphs-tabs-wrapper input[value="Add Block Placer"]{
+  background: url(../icons/svg/block.svg) no-repeat;
+}
+
+.field--widget-paragraphs .paragraphs-tabs-wrapper input[value="Add Buttons"]{
+  background: url(../icons/svg/button.svg) no-repeat;
+}
+
+.field--widget-paragraphs .paragraphs-tabs-wrapper input[value="Add Call to Action"]{
+  background: url(../icons/svg/cta.svg) no-repeat;
+}
+
+.field--widget-paragraphs .paragraphs-tabs-wrapper input[value="Add Content Item"]{
+  background: url(../icons/svg/content.svg) no-repeat;
+}
+
+.field--widget-paragraphs .paragraphs-tabs-wrapper input[value="Add Contact Info"]{
+  background: url(../icons/svg/contact.svg) no-repeat;
+}
+
+.field--widget-paragraphs .paragraphs-tabs-wrapper input[value="Add Custom Code"]{
+  background: url(../icons/svg/custom.svg) no-repeat;
+}
+
+.field--widget-paragraphs .paragraphs-tabs-wrapper input[value="Add Events by Category"]{
+  background: url(../icons//svg/events.svg) no-repeat;
+}
+
+.field--widget-paragraphs .paragraphs-tabs-wrapper input[value="Add Form"]{
+  background: url(../icons/svg/form.svg) no-repeat;
+}
+
+.field--widget-paragraphs .paragraphs-tabs-wrapper input[value="Add Horizontal Rule"]{
+  background: url(../icons/svg/hr.svg) no-repeat;
+}
+
+.field--widget-paragraphs .paragraphs-tabs-wrapper input[value="Add Image"]{
+  background: url(../icons/svg/image.svg) no-repeat;
+}
+
+.field--widget-paragraphs .paragraphs-tabs-wrapper input[value="Add Links & Files"]{
+  background: url(../icons/svg/link.svg) no-repeat;
+}
+
+.field--widget-paragraphs .paragraphs-tabs-wrapper input[value="Add Lightbox Gallery"]{
+  background: url(../icons/svg/gallery.svg) no-repeat;
+}
+
+.field--widget-paragraphs .paragraphs-tabs-wrapper input[value="Add Map"]{
+  background: url(../icons//svg/map.svg) no-repeat;
+}
+
+.field--widget-paragraphs .paragraphs-tabs-wrapper input[value="Add Mosaic Gallery"]{
+  background: url(../icons//svg/mosaic.svg) no-repeat;
+}
+
+
+.field--widget-paragraphs .paragraphs-tabs-wrapper input[value="Add News by Category"]{
+  background: url(../icons//svg/news.svg) no-repeat;
+}
+
+.field--widget-paragraphs .paragraphs-tabs-wrapper input[value="Add Pullquote"]{
+  background: url(../icons/svg/pullquote.svg) no-repeat;
+}
+
+.field--widget-paragraphs .paragraphs-tabs-wrapper input[value="Add Reveal Group"]{
+  background: url(../icons/svg/reveal.svg) no-repeat;
+}
+
+.field--widget-paragraphs .paragraphs-tabs-wrapper input[value="Add Reveal Section"]{
+  background: url(../icons/svg/reveal.svg) no-repeat;
+}
+
+.field--widget-paragraphs .paragraphs-tabs-wrapper input[value="Add Slideshow"]{
+  background: url(../icons/svg/slider.svg) no-repeat;
+}
+
+.field--widget-paragraphs .paragraphs-tabs-wrapper input[value="Add Social Media"]{
+  background: url(../icons/svg/social-media.svg) no-repeat;
+}
+
+.field--widget-paragraphs .paragraphs-tabs-wrapper input[value="Add Social Platform"]{
+  background: url(../icons/svg/social-media.svg) no-repeat;
+}
+
+.field--widget-paragraphs .paragraphs-tabs-wrapper input[value="Add Text"]{
+  background: url(../icons/svg/text.svg) no-repeat;
+}
+
+.field--widget-paragraphs .paragraphs-tabs-wrapper input[value="Add Tile Image"]{
+  background: url(../icons//svg/mosaic.svg) no-repeat;
+}
+
+.field--widget-paragraphs .paragraphs-tabs-wrapper input[value="Add View Placer"]{
+  background: url(../icons/svg/view-placer.svg) no-repeat;
+}
+
+.field--widget-paragraphs .paragraphs-tabs-wrapper input[value="Add Video"]{
+  background: url(../icons/svg/video.svg) no-repeat;
+}
+
+/* CUSTOM WARNINGS
+------------------ */
+.node-form .custom-warning{
+  color: #000000;
+  font-size: 12px;
+  border: 2px solid #dd241b;
+  background: rgba(221,36,27,0.2);
+  padding: .25em 1em;
+  display: inline-block;
+}
+
+/* WIDGET LABEL */
+.js .paragraph-type-top .paragraph-type-title{
+  min-width: 300px;
+}
+.paragraph-type-title .paragraph-type-label{
+  font-weight: bold;
+}
+
+/* WIDGET ADMIN DESCRIPTION */
+.field--name-field-admin-description,.field--name-field-admin-description .field-item{
+  color: #ec2f10;
+}
+ 
+/* GENERAL */
+.fieldset-wrapper .fieldset-description{
+  margin-bottom: 1em;
+}
+
+
+
+
+
+ 
+ 

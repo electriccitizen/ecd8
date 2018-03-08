@@ -1,0 +1,114 @@
+/* ===========
+FLEX ITEMS
+============= */
+
+/* WIDGETS FLEX ITEMS
+--------------------- */
+.flex-wrap{
+	// need mins so that js can calculate heights and widths
+	min-height: 0;
+	min-width: 0;
+	&:not(.fill){
+		//from 01-mixins.scss
+		@include safeFlexSize(0,0,100%);
+	}
+	//use auto for fill-remainder widget layout
+	&.fill{
+		//from 01-mixins.scss
+		@include safeFlexSize(0,0,auto);
+	}
+
+	//padding for widgets without color or image backgrounds (and views, accordions)
+	&.backless{
+		& > .paragraph:not(.paragraph--type--admin-view-placer):not(.paragraph--type--accordion-item){
+			padding: 1em 20px;
+			//prevent padding on nested widgets
+			.paragraph{
+				padding: 0;
+			}
+		}
+	}
+
+	.wrapper{
+		width: 100%;
+		//set widget content wrappers to text width when in kermit
+		.pl & ,.kermit .block-region-main &{
+			max-width: $maxWidthText;
+			@include auto;
+		}
+	}
+
+	@include tab{
+		//allow full width widgets with backgrounds to go full width of screen
+		&:not(.backless).single{
+			.widget-color,.image{
+				.kermit &,.pl &{
+					@include calc(margin-right, "-50vw + 380px");
+					@include calc(margin-left, "-50vw + 380px");
+					//keep wrapper width in screen bounds
+					h2.widget-title,.wrapper{
+						@include calc(width, "100vw - 40px");
+					}
+				}
+			}
+		}
+		//allow widgets with backgrounds  in columns to have an equal row height
+		&:not(.single):not(.backless){
+			.paragraph{
+				height: 100%;
+				.widget-color,.image{
+					height: 100%;
+				}
+			}
+		}
+		&.quarter,&.third{
+			//from 01-mixins.scss
+			@include safeFlexSize(0,0,50%);
+		}
+	}
+
+	//percents at content width
+	@include maxWidth{
+		&.quarter{
+			//from 01-mixins.scss
+			@include safeFlexSize(0,0,25%);
+		}
+		&.third{
+			//from 01-mixins.scss
+			@include safeFlexSize(0,0,33.333%);
+		}
+		&.half{
+			//from 01-mixins.scss
+			@include safeFlexSize(0,0,50%);
+		}
+		&.two-thirds{
+			//from 01-mixins.scss
+			@include safeFlexSize(0,0,66.666%);
+		}
+		&.three-quarter{
+			//from 01-mixins.scss
+			@include safeFlexSize(0,0,75%);
+		}
+	}
+
+}//end flex wrap
+
+
+//add margins for backless next to background widgets
+.single.backless + .single:not(.backless),.single:not(.backless) + .single.backless{
+	margin-top: 1em;
+}
+//add margin to last widget if it doesn't have a background
+.single.backless:last-child{
+	margin-bottom: 3em;
+}
+
+
+/* PATTERN LAB ONLY
+-------------- */
+.pl.flex-wrap{
+	.wrapper{
+		background: $lightGray;
+		min-height: 100px;
+	}
+}

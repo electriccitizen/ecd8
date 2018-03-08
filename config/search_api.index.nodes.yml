@@ -1,0 +1,215 @@
+uuid: b3c2ab3f-4d52-4b2c-b35f-4dc6d9673b00
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - field.storage.node.field_oc_widgets
+    - field.storage.paragraph.field_widget_title
+    - field.storage.paragraph.field_viewfield
+    - field.storage.node.field_event_pin_info
+    - field.storage.paragraph.field_accordion_item
+    - field.storage.paragraph.field_oc_long_text
+    - field.storage.paragraph.field_accordion_header
+    - field.storage.node.field_position
+    - search_api.server.local
+  module:
+    - paragraphs
+    - search_api
+    - node
+_core:
+  default_config_hash: 4xFhn8nKQAWjrpZDlNwBbMHvO2ixm6zAt2HjtJDCaKw
+id: nodes
+name: Content
+description: 'Search settings for nodes, paragraphs, terms.'
+read_only: false
+field_settings:
+  title:
+    label: Title
+    datasource_id: 'entity:node'
+    property_path: title
+    type: text
+    boost: !!float 21
+  body:
+    label: Body
+    datasource_id: 'entity:node'
+    property_path: body
+    type: text
+    boost: !!float 13
+    dependencies:
+      config:
+        - field.storage.node.body
+  field_widget_title:
+    label: 'Widgets » Paragraph » Widget Title'
+    datasource_id: 'entity:node'
+    property_path: 'field_oc_widgets:entity:field_widget_title'
+    type: text
+    boost: !!float 8
+    dependencies:
+      config:
+        - field.storage.node.field_oc_widgets
+        - field.storage.paragraph.field_widget_title
+      module:
+        - paragraphs
+  field_viewfield:
+    label: 'Widgets » Paragraph » Viewfield'
+    datasource_id: 'entity:node'
+    property_path: 'field_oc_widgets:entity:field_viewfield'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_oc_widgets
+        - field.storage.paragraph.field_viewfield
+      module:
+        - paragraphs
+  field_event_pin_info:
+    label: 'Event Pin Info'
+    datasource_id: 'entity:node'
+    property_path: field_event_pin_info
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_event_pin_info
+  field_oc_long_text_1:
+    label: 'Widgets » Paragraph » Accordion » Paragraph » Accordion Content'
+    datasource_id: 'entity:node'
+    property_path: 'field_oc_widgets:entity:field_accordion_item:entity:field_oc_long_text'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_oc_widgets
+        - field.storage.paragraph.field_accordion_item
+        - field.storage.paragraph.field_oc_long_text
+      module:
+        - paragraphs
+        - paragraphs
+  field_accordion_header_1:
+    label: 'Widgets » Paragraph » Accordion » Paragraph » Accordion Header'
+    datasource_id: 'entity:node'
+    property_path: 'field_oc_widgets:entity:field_accordion_item:entity:field_accordion_header'
+    type: text
+    boost: !!float 5
+    dependencies:
+      config:
+        - field.storage.node.field_oc_widgets
+        - field.storage.paragraph.field_accordion_item
+        - field.storage.paragraph.field_accordion_header
+      module:
+        - paragraphs
+        - paragraphs
+  field_position:
+    label: Position
+    datasource_id: 'entity:node'
+    property_path: field_position
+    type: text
+    boost: !!float 2
+    dependencies:
+      config:
+        - field.storage.node.field_position
+datasource_settings:
+  'entity:node':
+    bundles:
+      default: true
+      selected:
+        - support_book
+    languages:
+      default: true
+      selected: {  }
+processor_settings:
+  stemmer:
+    all_fields: true
+    fields:
+      - title
+      - body
+      - field_widget_title
+      - field_viewfield
+      - field_event_pin_info
+      - field_oc_long_text_1
+      - field_accordion_header_1
+      - field_position
+    exceptions:
+      texan: texa
+      mexican: mexic
+    weights:
+      preprocess_index: -43
+      preprocess_query: -43
+  rendered_item: {  }
+  add_url: {  }
+  aggregated_field: {  }
+  entity_status: {  }
+  tokenizer:
+    all_fields: true
+    fields:
+      - title
+      - body
+      - field_widget_title
+      - field_viewfield
+      - field_event_pin_info
+      - field_oc_long_text_1
+      - field_accordion_header_1
+      - field_position
+    spaces: ''
+    overlap_cjk: 1
+    minimum_word_size: '3'
+    weights:
+      preprocess_index: -49
+      preprocess_query: -49
+  ignorecase:
+    all_fields: true
+    fields:
+      - title
+      - body
+      - field_widget_title
+      - field_viewfield
+      - field_event_pin_info
+      - field_oc_long_text_1
+      - field_accordion_header_1
+      - field_position
+    weights:
+      preprocess_index: -48
+      preprocess_query: -48
+  type_boost:
+    boosts:
+      'entity:node':
+        datasource_boost: !!float 1
+        bundle_boosts:
+          blog: !!float 2
+          event: !!float 0
+          landing_page: !!float 5
+          news: !!float 0
+          page: !!float 3
+          profiles: !!float 0
+          support_book: !!float 0
+    weights:
+      preprocess_index: -42
+  html_filter:
+    all_fields: true
+    fields:
+      - title
+      - body
+      - field_widget_title
+      - field_viewfield
+      - field_event_pin_info
+      - field_oc_long_text_1
+      - field_accordion_header_1
+      - field_position
+    title: true
+    alt: true
+    tags:
+      h1: 5
+      h2: 3
+      h3: 2
+      h4: 2
+      h5: 2
+      h6: 2
+      strong: 2
+      b: 2
+    weights:
+      preprocess_index: -46
+      preprocess_query: -46
+tracker_settings:
+  default: {  }
+options:
+  index_directly: true
+  cron_limit: 50
+server: local

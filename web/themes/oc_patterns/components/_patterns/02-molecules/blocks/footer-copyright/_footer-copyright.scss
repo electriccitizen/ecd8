@@ -1,0 +1,24 @@
+/* ==================
+   FOOTER COPYRIGHT
+==================== */
+
+.block-simple-blockfooter-copyright{
+	//from 01-mixins.scss
+	@include safeFlexSize(0,0,100%);
+	//from 01-mixins.scss
+	@include safeFlexOrder(3);
+	text-align: center;
+	//change the footer block order at tab and align rigth and bottom
+	@include tab{
+		@include safeFlexSize(0,0,50%);
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		text-align: right;
+	}
+	p{
+		margin:0;
+		font-size: 14px;
+		color: $transWhite;
+	}
+}//end footer-copyright

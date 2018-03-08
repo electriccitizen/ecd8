@@ -1,0 +1,33 @@
+/* =============
+   NEWS NODE
+================ */
+.node--type-news{
+
+	.field-banner{
+		img{
+			display: block;
+			width: 100%;
+		}
+	}
+
+	.block-entity-fieldnodecreated{
+		margin-bottom: 1.5em;
+	}
+
+	.block-region-main{
+		@include mainContentSide;
+	}
+
+	//move sidebar to first in bunsen
+	.bunsen{
+		@include onlySmall{
+			.sidebar{
+				@include safeFlexOrder(1);
+			}
+			.main{
+				@include safeFlexOrder(2);
+			}
+		}
+	}
+
+}//end news

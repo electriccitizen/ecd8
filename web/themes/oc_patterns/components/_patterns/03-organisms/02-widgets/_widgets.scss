@@ -1,0 +1,156 @@
+/* ===================
+	WIDGETS GLOBAL
+===================== */
+
+//widgets parent field
+.field--name-field-oc-widgets {
+	//use flex to support layout field
+	@include safeFlex(row,wrap,null,null);
+	//override layout padding
+	//from 01-mixins.scss
+	@include edgeToEdge;
+	// preserve layout padding and prevent backgrounds from overflowing when next to sidebars
+	.beaker .main &,.bunsen .main &{
+		overflow: hidden;
+		@include tab{
+			margin-left: 0;
+			margin-right: 0;
+		}
+	}	
+}
+
+/* BACKGROUND TEXT STYLING MIXINS
+----------------- */
+@mixin lightBack {
+	h2,h3,h4,h5,h6,p,div {
+		color: $black;
+		&.pane-title{
+			border-color: $borderRule;
+		}
+	}
+	:before,:after{
+		color: $black;
+	}
+	a{
+		color: $transBlack;
+		&:hover,&:focus{
+			color: $black;
+			//from 02-animations.scss
+			@include transThreeAll;
+		}
+	}
+	.widget-title > a{
+		color: $black;
+		&:hover,&:focus{
+			color: $transBlack;
+			//from 02-animations.scss
+			@include transThreeAll;
+		}
+	}
+	figcaption {
+		color: $darkGrey;
+	}
+}
+
+@mixin darkBack {
+	h2,h3,h4,h5,h6,p,div {
+		color: $white;
+		&.pane-title{
+			border-color: $white;
+		}
+	}
+	:before,:after{
+		color: $white;
+	}
+	a{
+		color: $transWhite;
+		&:hover,&:focus{
+			color: $white;
+			//from 02-animations.scss
+			@include transThreeAll;
+		}
+	}
+	.widget-title > a{
+		color: $white;
+		&:hover,&:focus{
+			color: $transWhite;
+			//from 02-animations.scss
+			@include transThreeAll;
+		}
+	}
+	figcaption {
+		color: $white;
+	}
+}
+
+/* WIDGET BACKGROUNDS
+---------------- */
+//color
+.paragraph > .widget-color{
+	padding: 3em 20px;
+	//dk grey style
+	&.grey{
+		background-color: $darkGrey;
+		@include darkBack;
+	}
+	//dk grey style
+	&.blue{
+		background-color: $blue;
+		@include darkBack;
+	}
+	//dk grey style
+	&.orange{
+		background-color: $gold;
+		@include lightBack;
+	}
+}
+
+//image
+.paragraph > .image{
+	padding: 3em 20px;
+	@include darkBack;
+	position: relative;
+	background-position: center !important;
+	background-size: cover !important;
+	//from 01-mixins.scss
+	@include overlay;
+	& *{
+		position: relative;
+		z-index: 2;
+		color: $white;	
+	}
+	.paragraph--type--call-to-action &{
+		h2 > a{
+			color: $white;
+			&:hover,&:focus{
+				color: $transWhite;
+			}
+		}
+		.field-oc-link a{
+			color: $white;
+			&:hover,&:focus{
+				background-color: $transWhite;
+				color: $black;
+				border-color: $white;
+			}
+		}
+	}
+}
+
+
+/* LAYOUT WIDTHS
+------------------- */
+//styled in 00-base/layouts./flex/flex-item.scss
+
+
+/* WIDGETS WITHOUT SPECIFIC PL FOLDERS
+--------------------- */
+
+//admin view-placer
+.paragraph--type--admin-view-placer{
+	.wrapper{
+		max-width: 100% !important;
+	}
+}
+
+

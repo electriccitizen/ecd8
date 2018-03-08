@@ -1,0 +1,81 @@
+/* ============
+	BREAKPOINTS & GRID VARIABLES
+======================= */
+
+
+/* SINGULARITY VARIABLES
+------------ */
+@include breakpoint-set('to ems', true);
+@include add-grid(12);
+@include add-gutter(1/4);
+
+
+/* BREAKPOINT VARIABLES
+------------------------ */
+$smallTab: 500px;
+$tab: 760px;
+$desk: 900px;
+$maxWidth: 1200px;
+$maxWidthText: 800px;
+$onlyTab: 760px 899px;
+$onlySmall: max-width 759px; 
+$mobileMenu:max-width 979px;
+$deskMenu:min-width 980px;
+
+/// mixin - smallTab
+@mixin smallTab {
+	@include breakpoint($smallTab) {
+		@content;
+	}
+}
+
+/// mixin - tab
+@mixin tab {
+	@include breakpoint($tab) {
+		@content;
+	}
+}
+
+/// mixin - desk
+@mixin desk {
+	@include breakpoint($desk) {
+		@content;
+	}
+}
+
+///mixin - maxWidth
+@mixin maxWidth {
+	@include breakpoint($maxWidth) {
+		@content;
+	}
+}
+
+
+///mixin - onlyTab
+@mixin onlyTab {
+	@include breakpoint($onlyTab) {
+		@content;
+	}
+}
+
+
+///mixin - onlySmall
+@mixin onlySmall {
+	@include breakpoint($onlySmall) {
+		@content;
+	}
+}
+
+///mixin - mobileMenu
+@mixin mobileMenu {
+	@include breakpoint($mobileMenu) {
+		@content;
+	}
+}
+
+///mixin - deskMenu
+@mixin deskMenu {
+	@include breakpoint($deskMenu) {
+		@content;
+	}
+}

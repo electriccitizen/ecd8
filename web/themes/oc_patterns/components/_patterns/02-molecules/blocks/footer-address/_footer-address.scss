@@ -1,0 +1,37 @@
+/* ==================
+   FOOTER ADDRESS 
+==================== */
+
+.block-simple-blockfooter-address{
+	//from 01-mixins.scss
+	@include safeFlexSize(0,0,100%);
+	//from 01-mixins.scss
+	@include safeFlexOrder(2);
+	text-align: center;
+	margin-bottom: 1.5em;
+	//change the footer block order at tab and align left
+	@include tab{
+		//from 01-mixins.scss
+		@include safeFlexSize(0,0,30%);
+		//from 01-mixins.scss
+		@include safeFlexOrder(1);
+		text-align: left;
+		margin-bottom: 0;
+	}
+	h2{
+		display: none;
+	}
+	ul{
+		padding-left: 0;
+		//from 01-mixins.scss
+		@include listReset;
+		@include tab{
+			margin-bottom: 0;
+		}
+		li{
+			list-style: none;
+			font-size: 16px;
+			color: $transWhite;
+		}
+	}
+}//end footer-address

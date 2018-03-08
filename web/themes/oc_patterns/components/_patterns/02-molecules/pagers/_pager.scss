@@ -1,0 +1,159 @@
+/* ============
+PAGERS
+================= */
+
+
+/* MIXINS
+------------- */
+
+$pager-line: 24px;
+
+///mixin - pagerTiemStyle
+@mixin pagerItemStyle{
+	color: $midTeal;
+	display: block;
+	width: 26px;
+	height: 26px;
+	line-height: $pager-line;
+	border: 1px solid $midTeal;
+	text-align: center;
+	border-radius: 6px;
+	&:hover,&:focus{
+		color: $white;
+		background: $midTeal;
+		text-decoration: none;
+		@include transThreeAll;
+	}
+}
+
+
+///mixin - pagerControl
+@mixin pagerControl{
+	color: $midTeal;
+	&:hover,&:focus{
+		color: $black;
+		@include transThreeAll;
+	}
+}
+
+
+/* GLOBAL PAGER STYLING
+-------------------- */
+.js-pager__items{
+	@include listReset;
+	text-align: center;
+	@include safeFlex(row,wrap,null,null);
+	li{
+		*{
+			line-height: $pager-line;
+		}
+		&:not(:first-child):not(:last-child){
+			margin: 0 .25em;
+		}
+	}
+}
+
+/* FULL PAGER
+---------------- */
+.pager{
+	//page number styling;
+	.pager__item:not(.pager__item--first):not(.pager__item--previous):not(.pager__item--next):not(.pager__item--last){
+		a{
+			@include pagerItemStyle;
+		}
+		&.is-active{
+			a{
+				color: $white;
+				background: darken($midTeal, 12%);
+				&:hover,&:focus{
+					background: $midTeal;
+				}
+			}
+		}
+	}//end page number items
+
+	//first styling
+	.pager__item--first{
+		a{
+			@include pagerControl;
+		}
+	}
+
+	//previous styling
+	.pager__item--previous{
+		a{
+			@include pagerControl;
+			margin-right: .5em;
+		}
+	}
+
+	//next styling
+	.pager__item--next{
+		a{
+			@include pagerControl;
+			margin-left: .5em;
+		}
+	}
+
+	//last styling
+	.pager__item--last{
+		a{
+			@include pagerControl;
+		}
+	}
+
+}//end full .pager
+
+
+/* MINI PAGER 
+---------------- */
+nav:not(.pager){
+	.js-pager__items{
+		li{
+			color: $black;  
+			margin: 0 .5em;
+			@include larger;
+			line-height: 26px;
+		}
+		//pager controls
+		li a{
+			@include pagerItemStyle;
+			span{
+				position: relative;
+				top: -1px;
+			}
+		}
+	}//end js-pager-items
+}//end mini pager
+
+
+/* FLIPPY PAGER
+------------------- */
+ul.flippy{
+	@include listReset;
+	@include safeFlex(row,wrap,null,null);
+	li{
+		@include baseFontSize;
+		padding: 15px 0;
+		width: 50%;
+		a{
+			color: $midTeal;
+			&:hover,&:focus{
+				color: $black;
+				@include transThreeAll;
+			}
+		}
+		&.flippy-next{
+			text-align: right;
+		}
+	}
+}//end flippy
+
+
+/* PATTERN LAB ONLY
+----------------- */
+.pl{
+	.block-flippy-block{
+		padding: 0 20px;
+	}
+}

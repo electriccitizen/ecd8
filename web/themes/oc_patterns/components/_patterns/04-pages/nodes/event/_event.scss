@@ -1,0 +1,44 @@
+/* =============
+   EVENT NODE
+=================  */
+.node--type-event{
+
+	.field-banner{
+		img{
+			display: block;
+			width: 100%;
+		}
+	}
+
+	.block-region-main{
+		@include mainContentSide;
+	}
+
+	.block-entity-fieldnodefield-oc-date{
+		.field-oc-date{
+			margin-bottom: 1.5em;
+		}
+	}
+
+	.block-entity-fieldnodefield-event-pin-info{
+		margin-bottom: .5em;
+		font-weight: $heavy;
+	}
+
+	.block-entity-fieldnodefield-event-location{
+		margin-bottom: 1.5em;
+	}
+
+	//put sidebar first when in bunsen
+	.bunsen{
+		@include onlySmall{
+			.sidebar{
+				@include safeFlexOrder(1);
+			}
+			.main{
+				@include safeFlexOrder(2);
+			}
+		}
+	}
+	
+}//end event

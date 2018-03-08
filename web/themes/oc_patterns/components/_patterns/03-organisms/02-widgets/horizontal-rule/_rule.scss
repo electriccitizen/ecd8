@@ -1,0 +1,11 @@
+/* ===============
+   HORIZONTAL RULE WIDGET
+========================= */
+
+.paragraph--type--horizontal-rule{
+	.wrapper{
+		max-width: $maxWidthText;
+		@include auto;
+	}
+}//end form widget
+

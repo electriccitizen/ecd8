@@ -1,0 +1,57 @@
+/* ===============
+   LANDING PAGE NODE
+==================== */
+
+.node--type-landing_page{
+	.block-region-top{
+		position: relative;
+		.block-entity-fieldnodetitle{
+			margin-top: 0;
+		}
+		.field-banner{
+			opacity: 0;
+			//from 02-animations.scss
+			@include animation('fadeIn 1.2s 1 forwards');
+			img{
+				width: 100%;
+			}
+		}
+		.field-node-title{
+			margin-top: 0;
+			margin-bottom: 1.5em;
+			h1{
+				margin: 0;
+			}
+		}
+		.page-menu{
+			@include tab{
+				top: 100%;
+				bottom: auto;
+			}
+		}
+	}//end block-regoin-top
+
+
+	.block-region-main{
+		//from node.scss
+		@include mainContent;
+		.field.body{
+			p{
+				&:first-child{
+					font-size: 22px;				
+				}
+			}
+		}
+	}
+}//end landing-page
+
+
+/* PATTERN LAB ONLY
+-------------------- */
+.pl .node--type-landing_page{
+	.field--name-field-oc-widgets{
+		.pl-spacer{
+			margin-top: 0;
+		}
+	}
+}

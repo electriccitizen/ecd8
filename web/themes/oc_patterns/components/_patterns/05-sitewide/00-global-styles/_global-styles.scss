@@ -1,0 +1,144 @@
+/* ==============
+	 GLOBAL STYLES
+================= */
+body {
+	background: $siteBack;
+	& > .overflow-guard{
+		overflow-x: hidden;
+	}
+}
+p{
+	margin-top: 0;
+}
+
+.container-inline div{
+	display: inline;
+}
+
+
+/* SKIP NAV
+------------- */
+.overflow-guard > a.focusable{
+	&:focus{
+		position: fixed !important;
+		top: 0;
+		left: 0;
+		z-index: 9999;
+		display: block;
+		width: 100%;
+		background: $white;
+		padding: .25em 1em;
+	}
+}
+
+
+/* KINTING
+-------------- */
+.kint{
+	position: fixed;
+	z-index: 9999;
+	top: 200px;
+	right: 5%;
+	width: 90%;
+	max-width: 800px;
+	@include calc(max-height, "90% - 200px");
+	overflow: scroll;
+}
+
+
+
+/*  FILE ICONS
+--------------- */
+//pdf
+a[href$='.pdf']{
+	position: relative;
+	padding-left: 22px;
+	&:before{
+		content:'';
+		display: block;
+		position: absolute;
+		left: 0;
+		top: 4px;
+		width: 15px;
+		height: 18px;
+		//from icon_sprite.scss 
+		@include sprite-file-pdf;
+		//from 03-background-sizes.scss
+		@include iconSize;
+	}
+	&:hover:before,&:focus:before{
+		//from 01-mixins.scss 
+		@include opacity(.7);
+	}
+}
+//word
+a[href$='.doc'],a[href$=".docx"]{
+	position: relative;
+	padding-left: 22px;
+	&:before{
+		content:'';
+		display: block;
+		position: absolute;
+		left: 0;
+		top: 4px;
+		width: 15px;
+		height: 18px;
+		//from icon_sprite.scss 
+		@include sprite-file-word;
+		//from 03-background-sizes.scss 
+		@include iconSize;
+	}
+	&:hover:before,&:focus:before{
+		//from 01-mixins.scss 
+		@include opacity(.7);
+	}
+}
+//excel
+a[href$='.xls'],a[href$=".xlsx"]{
+	position: relative;
+	padding-left: 22px;
+	&:before{
+		content:'';
+		display: block;
+		position: absolute;
+		left: 0;
+		top: 4px;
+		width: 15px;
+		height: 18px;
+		//from icon_sprite.scss 
+		@include sprite-file-xls;
+		//from 03-background-sizes.scss 
+		@include iconSize;
+	}
+	&:hover:before,&:focus:hover{
+		//from 01-mixins.scss 
+		@include opacity(.7);
+	}
+}
+//powerpoint
+a[href$='.ppt'],a[href$=".pptx"]{
+	position: relative;
+	padding-left: 22px;
+	&:before{
+		content:'';
+		display: block;
+		position: absolute;
+		left: 0;
+		top: 4px;
+		width: 15px;
+		height: 18px;
+		//from icon_sprite.scss 
+		@include sprite-file-ppt;
+		//from 03-background-sizes.scss 
+		@include iconSize;
+	}
+	&:hover:before,&:focus:hover{
+		//from 01-mixins.scss 
+		@include opacity(.7);
+	}
+}
+
+
+
+/* PLAYGROUND
+----------------- */

@@ -1,0 +1,55 @@
+/* ==============
+   SUPPORT BOOK NODE
+===================== */
+.node-type-support-book{
+	.block-region-top{
+		margin-bottom: 2em;
+	}
+
+	.block-region-main{
+		@include mainContentSide;
+	}
+
+	.block-region-sidebar{
+		@include tab{
+			margin-top: .5em;
+		}
+	}
+
+	//restricted access message
+	&:not(.logged-in){
+		.layout-container > main{
+			position: relative;
+		}
+		.restricted{
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			text-align: center;
+			& > div{
+				max-width: $maxWidthText + 40px;
+				border: 1px solid $borderRule;
+				padding: 40px 30px;
+				@include auto;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				@include translate(-50%,-50%);
+			}
+		}
+	}
+
+}//end support book
+
+
+/* PATTERN LAB ONLY
+----------------------- */
+.pl .node--type-support_book{
+	.sidebar{
+		.pl-spacer{
+			margin-top: 0;
+		}
+	}
+}

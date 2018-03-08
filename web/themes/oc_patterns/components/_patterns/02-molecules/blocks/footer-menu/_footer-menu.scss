@@ -1,0 +1,43 @@
+/* =================
+   FOOTER MENU
+==================== */
+
+.footer-menu{
+	h2.block-title{
+		display: none;
+	}
+	width: 100%;
+	@include safeFlexOrder(1);
+	margin-bottom: 1.5em;
+	text-align: center;
+	//change the footer block order at tab and align right
+	@include tab{
+		width: 70%;
+		text-align: right;
+	}
+	ul{
+		//from 01-mixins.scss
+		@include listReset;
+		@include safeFlex(row,wrap,null,null);
+		li{
+			a{
+				font-size: 16px;
+				color: $gold;
+				&:hover,&:focus{
+					color: $transWhite;
+					@include transThreeAll;
+				}
+			}
+			&:not(:first-child){
+				padding-left: 6px;
+			}
+			&:not(:last-child){
+				&:after{
+					content: '•';
+					padding-left: 8px;
+					color: $transWhite;
+				}
+			}
+		}
+	}//end ul
+}//end footer-menu
