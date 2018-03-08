@@ -30,7 +30,6 @@ dependencies:
   - dblog
   - default_content
   - devel
-  - disqus
   - dynamic_page_cache
   - easy_breadcrumb
   - editor
@@ -82,7 +81,6 @@ dependencies:
   - redirect
   - responsive_image
   - search
-  - search404
   - search_api
   - search_api_db
   - shortcut
