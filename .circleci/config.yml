@@ -75,8 +75,8 @@ jobs:
       #    command: drush @self si oc install_configure_form.enable_update_status_module=NULL -y
       # Import DB.
       - run:
-        name: Import database
-        command: drush sql-sync @ecd8.dev @test
+          name: Import database
+          command: drush sql-sync @ecd8.dev @test
       - run:
           name: Import config
           command: drush @test cim
