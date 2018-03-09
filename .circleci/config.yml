@@ -61,8 +61,8 @@ jobs:
       - run: drush status --root=/home/circleci/site_build/web
       #- run: drush si oc --root=/home/circleci/site_build/web -y
       - run: cd /home/circleci/site_build/web/sites/default
-      - run: drush status
-      - run: drush site-install oc --db-url=mysql://root:@localhost:3306/rbzsucbakn
+      - run: drush status  --root=/home/circleci/site_build/web
+      - run: drush site-install oc --db-url=mysql://root:@localhost:3306/rbzsucbakn -y  --root=/home/circleci/site_build/web
       # Install Drupal.
       #- run:
       #    name: Install site
