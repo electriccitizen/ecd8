@@ -17,7 +17,12 @@ jobs:
           - MYSQL_HOST=127.0.0.1
       - image: selenium/standalone-chrome:3.1.0
     steps:
-      - run: echo "memory_limit = 1024M" > ~/.phpenv/versions/7.1/etc/conf.d/memory.ini
+      - run:
+          name: ini
+          command: php -i
+      #- run:
+      #    name: memory_limit
+      #    command: echo "memory_limit = 1024M" > ~/.phpenv/versions/7.1/etc/conf.d/memory.ini
       - run:
           name: Install PHP extensions
           command: sudo docker-php-ext-install pdo_mysql
