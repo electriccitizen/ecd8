@@ -70,9 +70,9 @@ jobs:
       - run: drush status  --root=/home/circleci/site_build/web
       #- run: drush @self site-install oc -y
       # Install Drupal.
-      - run:
-          name: install
-          command: drush @self si oc install_configure_form.enable_update_status_module=NULL -y
+      #- run:
+      #    name: install
+      #    command: drush @self si oc install_configure_form.enable_update_status_module=NULL -y
       - run:
           name: Install site
           command: drush @test cim
