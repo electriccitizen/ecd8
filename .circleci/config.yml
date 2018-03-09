@@ -20,9 +20,9 @@ jobs:
       - run:
           name: ini
           command: php -i
-      #- run:
-      #    name: memory_limit
-      #    command: echo "memory_limit = 1024M" > ~/.phpenv/versions/7.1/etc/conf.d/memory.ini
+      - run:
+          name: memory_limit
+          command: echo "memory_limit = 1024M" > /usr/local/etc/php/conf.d/memory.ini
       - run:
           name: Install PHP extensions
           command: sudo docker-php-ext-install pdo_mysql
