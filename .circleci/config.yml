@@ -3,7 +3,7 @@ jobs:
   build:
     working_directory: ~/site_build
     docker:
-      - image: circleci/php:7.0-apache-node-browsers
+      - image: circleci/php:7.1-apache-node
         environment:
           - MYSQL_HOST=127.0.0.1
       - image: mysql:5.7
@@ -17,6 +17,7 @@ jobs:
           - MYSQL_HOST=127.0.0.1
       - image: selenium/standalone-chrome:3.1.0
     steps:
+      - run: echo "memory_limit = 1024M" > ~/.phpenv/versions/7.1/etc/conf.d/memory.ini
       - run:
           name: Install PHP extensions
           command: sudo docker-php-ext-install pdo_mysql
