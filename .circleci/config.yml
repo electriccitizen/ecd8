@@ -14,7 +14,7 @@ jobs:
           - MYSQL_ALLOW_EMPTY_PASSWORD=true
           - MYSQL_DATABASE=rbzsucbakn
           - MYSQL_ROOT_HOST=%
-          - MYSQL_HOST=localhost
+          - MYSQL_HOST=127.0.0.1
       - image: selenium/standalone-chrome:3.1.0
     steps:
       - run:
