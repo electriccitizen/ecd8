@@ -5,6 +5,7 @@ $aliases['ecd8.dev'] = array(
   'root' => '/home/master/applications/rbzsucbakn/public_html/web',
   'uri' => 'phpstack-156516-451575.cloudwaysapps.com',
 );
+
 $aliases['ecd8.local'] = array(
   'uri' => 'ecd8.local',
   'root' => '/var/www/drupalvm/web',
