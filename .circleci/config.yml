@@ -38,8 +38,6 @@ jobs:
           name: Install mysql-client
           command: |
             sudo apt-get install mysql-client
-      - run: mysql -h 127.0.0.1 -u root -pubuntu
-      - run: exit
       - checkout
       - run: php -v
       - run: sudo cp .circleci/tests/circle/circle.conf /etc/apache2/sites-available
@@ -64,7 +62,7 @@ jobs:
       #- run: drush si oc --root=/home/circleci/site_build/web -y
       - run: cd /home/circleci/site_build/web/sites/default
       - run: drush status  --root=/home/circleci/site_build/web
-      - run: drush site-install oc --db-url=mysql://root:@localhost:3306/rbzsucbakn -y  --root=/home/circleci/site_build/web
+      - run: drush @self site-install oc -y
       # Install Drupal.
       #- run:
       #    name: Install site
