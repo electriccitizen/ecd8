@@ -3,7 +3,7 @@ jobs:
   build:
     working_directory: ~/site_build
     docker:
-      - image: circleci/7.1-apache-node-browsers
+      - image: circleci/php:7.0-apache-node-browsers
         environment:
           - MYSQL_HOST=127.0.0.1
       - image: mysql:5.7
