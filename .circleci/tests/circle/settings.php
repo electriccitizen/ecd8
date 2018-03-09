@@ -18,6 +18,12 @@ $databases['default']['default'] = array(
   'prefix' => '',
 );
 
+$config_directories = array(
+  CONFIG_SYNC_DIRECTORY => '/home/circleci/site_build/config',
+);
+
+
+
 $settings['theme_debug'] = TRUE;
 $settings['hash_salt'] = 'flaosk@9i9#!~askdo';
 $settings['container_yamls'][] = 'development.services.yml';
