@@ -1,4 +1,4 @@
-uuid: 461841ee-007d-4e70-a1d5-466607b361bb
+uuid: 02759bbf-ec14-4a25-a704-1c6fd36273f7
 langcode: en
 status: true
 dependencies:
@@ -21,7 +21,7 @@ default_value: {  }
 default_value_callback: ''
 settings:
   file_directory: ''
-  file_extensions: 'txt pdf doc docx zip xls xlsx'
+  file_extensions: 'txt pdf doc docx zip xsl xslx'
   max_filesize: 20mb
   description_field: true
   handler: 'default:file'

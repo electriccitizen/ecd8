@@ -1,4 +1,4 @@
-uuid: bb4d8c1f-afb2-4213-9c6d-bf02b072b18c
+uuid: 51ce5050-230e-463d-b53a-fae76f401d6d
 langcode: en
 status: open
 dependencies:
@@ -145,9 +145,9 @@ handlers:
       return_path: ''
       ignore_access: false
       exclude_empty: true
+      twig: false
       sender_mail: ''
       sender_name: ''
-      twig: false
   email_notification:
     id: email
     label: 'Email notification'
@@ -177,6 +177,6 @@ handlers:
       return_path: ''
       ignore_access: false
       exclude_empty: true
+      twig: false
       sender_mail: ''
       sender_name: ''
-      twig: false

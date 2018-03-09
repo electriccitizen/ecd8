@@ -1,13 +1,11 @@
-uuid: 28c81c52-89f0-406b-a0c9-a7f71f284c0c
+uuid: c1a04d1b-c00a-4ff0-979b-3a6d96f7269d
 langcode: en
 status: true
-dependencies:
-  content:
-    - 'file:file:3fcf2449-30a2-4b46-b972-f9ddde522828'
+dependencies: {  }
 _core:
   default_config_hash: 7ZsQ6T6CYFKbp93GBApZFduHHwlDQbPNui4dSe8IjWA
 id: accordion_item
 label: 'Accordion Item'
-icon_uuid: 3fcf2449-30a2-4b46-b972-f9ddde522828
-description: 'Accordion Group subwidget'
+icon_uuid: null
+description: null
 behavior_plugins: {  }

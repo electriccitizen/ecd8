@@ -1,9 +1,9 @@
-uuid: d42a3cf4-0c94-4275-9fdb-de0fb6785232
+uuid: 8d70f85a-0990-4004-aaf2-f10d2425eb60
 langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_form_mode.media.background_image
+    - core.entity_form_mode.media.media_browser
     - field.field.node.blog.body
     - field.field.node.blog.field_author
     - field.field.node.blog.field_banner
@@ -44,7 +44,7 @@ content:
   field_banner:
     weight: 2
     settings:
-      form_mode: background_image
+      form_mode: media_browser
       label_singular: ''
       label_plural: ''
       allow_new: true
@@ -67,14 +67,12 @@ content:
     settings:
       title: Paragraph
       title_plural: Paragraphs
-      edit_mode: closed
-      closed_mode: preview
-      autocollapse: all
+      edit_mode: preview
       add_mode: button
       form_display_mode: default
       default_paragraph_type: _none
     third_party_settings: {  }
-    type: paragraphs
+    type: entity_reference_paragraphs
     region: content
   field_tags:
     weight: 5
@@ -102,6 +100,9 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+    region: content
+  url_redirects:
+    weight: 50
     region: content
 hidden:
   created: true

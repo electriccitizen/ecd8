@@ -1,4 +1,4 @@
-uuid: 7dccfc57-ed18-44cd-b589-ef1d9619109a
+uuid: a028c4ea-4236-4b5c-8a8d-021f0d08334c
 langcode: en
 status: true
 dependencies:
@@ -79,7 +79,7 @@ display:
         type: default
         options:
           grouping: {  }
-          row_class: ''
+          row_class: horizontal
           default_row_class: true
       row:
         type: fields

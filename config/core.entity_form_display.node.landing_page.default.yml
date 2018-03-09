@@ -1,13 +1,13 @@
-uuid: 7dbb89e6-71b0-4330-868c-fd8814b1139c
+uuid: 810ad436-eba8-4edc-861d-5cc1b66ff701
 langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_form_mode.media.background_image
     - field.field.node.landing_page.body
     - field.field.node.landing_page.field_banner
     - field.field.node.landing_page.field_metatags
     - field.field.node.landing_page.field_oc_widgets
+    - field.field.node.landing_page.field_use_as_background
     - field.field.node.landing_page.panelizer
     - node.type.landing_page
   module:
@@ -36,7 +36,7 @@ content:
   field_banner:
     weight: 1
     settings:
-      form_mode: background_image
+      form_mode: default
       label_singular: ''
       label_plural: ''
       allow_new: true
@@ -59,14 +59,19 @@ content:
     settings:
       title: Paragraph
       title_plural: Paragraphs
-      edit_mode: closed
-      closed_mode: preview
-      autocollapse: all
+      edit_mode: preview
       add_mode: button
       form_display_mode: default
       default_paragraph_type: _none
     third_party_settings: {  }
-    type: paragraphs
+    type: entity_reference_paragraphs
+    region: content
+  field_use_as_background:
+    weight: 2
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
     region: content
   path:
     type: path

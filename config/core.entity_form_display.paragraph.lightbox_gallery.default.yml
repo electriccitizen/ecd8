@@ -1,8 +1,9 @@
-uuid: 5334c79f-075a-484e-9289-75d8de30da04
+uuid: 284cd2db-67fa-4fab-85c7-643c9ba9d831
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_form_mode.media.media_browser
     - field.field.paragraph.lightbox_gallery.field_admin_description
     - field.field.paragraph.lightbox_gallery.field_layout
     - field.field.paragraph.lightbox_gallery.field_oc_image_multi
@@ -35,7 +36,7 @@ content:
   field_oc_image_multi:
     weight: 3
     settings:
-      form_mode: default
+      form_mode: media_browser
       label_singular: ''
       label_plural: ''
       allow_new: true

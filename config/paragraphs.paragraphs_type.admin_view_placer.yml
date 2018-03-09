@@ -1,13 +1,11 @@
-uuid: 626089ce-a2fd-4b42-a151-52fcde90e7fd
+uuid: ffd29075-52a2-4748-98b3-570a41d0ac36
 langcode: en
 status: true
-dependencies:
-  content:
-    - 'file:file:c61cd64f-3849-4ec5-9603-a85e9e8566e6'
+dependencies: {  }
 _core:
   default_config_hash: xFmIZZmwU5TVs2ecXZnsKd1nTZ3Ms54cMHP6tYRnw90
 id: admin_view_placer
-label: 'View Placer'
-icon_uuid: c61cd64f-3849-4ec5-9603-a85e9e8566e6
-description: ''
+label: 'Admin View Placer'
+icon_uuid: null
+description: null
 behavior_plugins: {  }

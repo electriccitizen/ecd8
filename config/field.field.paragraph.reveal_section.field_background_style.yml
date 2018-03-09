@@ -1,0 +1,23 @@
+uuid: a59e363c-aa3f-4281-b31d-9e61e62fbb2f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_background_style
+    - paragraphs.paragraphs_type.reveal_section
+  module:
+    - options
+_core:
+  default_config_hash: 7qRP42uUp21fMJIuToooAmRVt0ex4V_KhxdrAdW9cx0
+id: paragraph.reveal_section.field_background_style
+field_name: field_background_style
+entity_type: paragraph
+bundle: reveal_section
+label: 'Background Style'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

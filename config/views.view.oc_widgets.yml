@@ -1,4 +1,4 @@
-uuid: 43fe937b-a6dc-46bf-8e68-b21032dcc83a
+uuid: 3c09eaf1-3464-493a-883c-8d57353befe4
 langcode: en
 status: true
 dependencies:
@@ -1485,3 +1485,19 @@ display:
         - 'config:field.storage.paragraph.field_display_options'
         - 'config:field.storage.paragraph.field_display_style'
         - 'config:field.storage.paragraph.field_number_of_items'
+  slideshow:
+    display_plugin: embed
+    id: slideshow
+    display_title: Slideshow
+    position: 1
+    display_options:
+      display_extenders: {  }
+      display_description: ''
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+      tags:
+        - 'config:field.storage.paragraph.field_oc_image_multi'

@@ -1,4 +1,4 @@
-uuid: fec53976-b20d-4890-8bbf-1bd84d2b9d0b
+uuid: 7bdb2d9d-e0ec-4b31-8424-44f1ae0894b3
 langcode: en
 status: true
 dependencies:
@@ -6,6 +6,7 @@ dependencies:
     - field.field.media.video.field_media_video_embed_field
     - media_entity.bundle.video
   module:
+    - path
     - video_embed_field
 _core:
   default_config_hash: VTHzHh9F8HkGaj_aR7WIFMi7BR4-FKda53oVVszmse4
@@ -28,7 +29,12 @@ content:
       placeholder: ''
     third_party_settings: {  }
     region: content
+  path:
+    type: path
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden:
   created: true
-  path: true
   uid: true

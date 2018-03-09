@@ -1,4 +1,4 @@
-uuid: e9ff22ba-9f41-4640-89b9-57e2ba6ad816
+uuid: d9eb6dd4-9a63-402e-a3c1-64035b0c523c
 langcode: en
 status: true
 dependencies:
@@ -59,10 +59,10 @@ settings:
           items:
             - Styles
   plugins:
-    stylescombo:
-      styles: "span.highlight|Highlight\r\ndiv.warning|Warning\r\nsmall|Small"
     language:
       language_list: un
+    stylescombo:
+      styles: "span.highlight|Highlight\r\ndiv.warning|Warning\r\nsmall|Small"
     linkit:
       linkit_profile: wysiwyg
 image_upload:

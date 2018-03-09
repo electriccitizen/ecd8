@@ -1,0 +1,21 @@
+uuid: dc62bdc9-2f7f-4586-a3ce-5d9fd27f48e4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_admin_description
+    - paragraphs.paragraphs_type.reveal_group
+_core:
+  default_config_hash: m9tEupnNvI-9A6uVLhtY5RreyUVJl2GXX5Zo-gu0uXY
+id: paragraph.reveal_group.field_admin_description
+field_name: field_admin_description
+entity_type: paragraph
+bundle: reveal_group
+label: 'Admin Description'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,11 @@
+uuid: 61053621-4de7-4810-a86d-ea44cba19853
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: sQhzrDlctvftBZ22eXssnlM12xmNNIkr5Ez8wLai2R0
+id: reveal_section
+label: 'Reveal Section'
+icon_uuid: null
+description: null
+behavior_plugins: {  }

@@ -1,4 +1,4 @@
-uuid: 3944717a-9ed5-4940-976a-d8c3551c59ca
+uuid: 926a10fc-bad8-4921-b091-a51a46eab0db
 langcode: en
 status: true
 dependencies:
@@ -75,6 +75,23 @@ third_party_settings:
             context_mapping:
               entity: '@panelizer.entity_context:entity'
             uuid: 1b539bcb-aa10-4d3d-b0bc-8755e0866b73
+          f3889313-216d-48fc-adcf-9b0b34f73014:
+            id: 'entity_field:node:field_position'
+            label: Position
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: hidden
+              type: entity_reference_label
+              settings:
+                link: false
+              third_party_settings: {  }
+              weight: 0
+            region: main
+            weight: -2
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            uuid: f3889313-216d-48fc-adcf-9b0b34f73014
           490e60ae-4adc-4e28-bac7-ac84e67282ae:
             id: 'entity_field:node:field_profile_image'
             label: 'Profile Image'
@@ -118,23 +135,6 @@ third_party_settings:
             weight: -10
             uuid: 22ebdebb-eb2a-4409-8237-429f82a89015
             context_mapping: {  }
-          14584254-3efc-4159-b3b3-fa9adff5fbb0:
-            id: 'entity_field:node:field_position'
-            label: Position
-            provider: ctools_block
-            label_display: '0'
-            formatter:
-              label: hidden
-              type: string
-              settings:
-                link_to_entity: false
-              third_party_settings: {  }
-              weight: 0
-            region: main
-            weight: -2
-            uuid: 14584254-3efc-4159-b3b3-fa9adff5fbb0
-            context_mapping:
-              entity: '@panelizer.entity_context:entity'
         id: panels_variant
         label: Default
         uuid: e95f52c8-5070-4a1f-bb44-e8822b4553f1
@@ -193,12 +193,12 @@ content:
     type: telephone_link
     region: content
   field_position:
-    weight: 109
+    weight: 104
     label: above
     settings:
-      link_to_entity: false
+      link: true
     third_party_settings: {  }
-    type: string
+    type: entity_reference_label
     region: content
   field_profile_image:
     weight: 102

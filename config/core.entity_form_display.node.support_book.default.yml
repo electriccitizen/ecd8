@@ -1,4 +1,4 @@
-uuid: e7871444-1e3c-443a-be39-4772e5bf91e3
+uuid: 0750b0e6-e3d4-4ce2-8f12-0148c0154d89
 langcode: en
 status: true
 dependencies:
@@ -32,14 +32,12 @@ content:
     settings:
       title: Paragraph
       title_plural: Paragraphs
-      edit_mode: closed
-      closed_mode: preview
-      autocollapse: all
+      edit_mode: preview
       add_mode: button
       form_display_mode: default
       default_paragraph_type: _none
     third_party_settings: {  }
-    type: paragraphs
+    type: entity_reference_paragraphs
     region: content
   path:
     type: path
@@ -61,6 +59,9 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+    region: content
+  url_redirects:
+    weight: 50
     region: content
 hidden:
   created: true

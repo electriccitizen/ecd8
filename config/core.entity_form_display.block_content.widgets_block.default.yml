@@ -1,4 +1,4 @@
-uuid: 3c0fae1b-d657-4622-a2f3-4d4b88f4ce17
+uuid: eda4619a-26e7-4c82-9a03-efca14cf9423
 langcode: en
 status: true
 dependencies:
@@ -15,7 +15,7 @@ bundle: widgets_block
 mode: default
 content:
   field_block_widgets:
-    type: paragraphs
+    type: entity_reference_paragraphs
     weight: 27
     settings:
       title: Paragraph

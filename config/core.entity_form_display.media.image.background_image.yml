@@ -1,4 +1,4 @@
-uuid: e995893a-ab0b-404b-af75-4a84f64a67f2
+uuid: 979bbbc6-e164-475e-af63-a778b33dcad5
 langcode: en
 status: true
 dependencies:
@@ -9,7 +9,7 @@ dependencies:
     - image.style.thumbnail
     - media_entity.bundle.image
   module:
-    - focal_point
+    - image
     - path
 _core:
   default_config_hash: RoFWXq9TE3JLpNwhIhChH60ZmaSkjxQfZmLs6sfLY-o
@@ -23,10 +23,8 @@ content:
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
-      preview_link: true
-      offsets: '50,50'
     third_party_settings: {  }
-    type: image_focal_point
+    type: image_image
     region: content
   name:
     type: string_textfield

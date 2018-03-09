@@ -1,13 +1,11 @@
-uuid: 509ca74d-0535-4682-b243-ca42656575e9
+uuid: ad626754-970b-46ff-9076-47a07ade7dbc
 langcode: en
 status: true
-dependencies:
-  content:
-    - 'file:file:e17677f9-e84e-46a2-a0d2-743304926ec1'
+dependencies: {  }
 _core:
   default_config_hash: DFjNPp66gs8S2agQGgjreyMBMpTEKqOCCKgMm-dvdfs
 id: horizontal_rule
 label: 'Horizontal Rule'
-icon_uuid: e17677f9-e84e-46a2-a0d2-743304926ec1
-description: ''
+icon_uuid: null
+description: null
 behavior_plugins: {  }

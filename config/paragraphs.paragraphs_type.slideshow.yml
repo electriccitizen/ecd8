@@ -1,13 +1,11 @@
-uuid: d7690c18-9fef-4b27-bef6-89a84af8e077
+uuid: 72345c79-e9dc-4283-a58c-941f28f8585f
 langcode: en
 status: true
-dependencies:
-  content:
-    - 'file:file:3e91c741-de7a-4720-8028-09dd9fc2b6f1'
+dependencies: {  }
 _core:
   default_config_hash: W-YSWm69MO4j53tndCm8_qZECmzSJsCBva_O_OgzfZo
 id: slideshow
 label: Slideshow
-icon_uuid: 3e91c741-de7a-4720-8028-09dd9fc2b6f1
-description: ''
+icon_uuid: null
+description: null
 behavior_plugins: {  }

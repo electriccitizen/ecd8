@@ -1,13 +1,11 @@
-uuid: 64eadc53-ba4b-4e75-9b28-d83d91c4edc4
+uuid: ed47e8f4-e0eb-4ba3-803d-e8b702a2ad8d
 langcode: en
 status: true
-dependencies:
-  content:
-    - 'file:file:b321b73b-f167-4128-89ec-b805586085c2'
+dependencies: {  }
 _core:
   default_config_hash: MQuBGUXWIA7YFtgbStyyzu7e_EvJv3xkCEIWHvKBKSQ
 id: image
 label: Image
-icon_uuid: b321b73b-f167-4128-89ec-b805586085c2
-description: ''
+icon_uuid: null
+description: null
 behavior_plugins: {  }

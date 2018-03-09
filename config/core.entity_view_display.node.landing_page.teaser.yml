@@ -1,4 +1,4 @@
-uuid: d89c6196-9c3d-4857-b404-bc2e0c4f3fb0
+uuid: c41e3091-d7f6-4c8b-b11a-d8f3e26b5223
 langcode: en
 status: true
 dependencies:
@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.landing_page.field_banner
     - field.field.node.landing_page.field_metatags
     - field.field.node.landing_page.field_oc_widgets
+    - field.field.node.landing_page.field_use_as_background
     - field.field.node.landing_page.panelizer
     - node.type.landing_page
   module:
@@ -36,4 +37,5 @@ hidden:
   field_banner: true
   field_metatags: true
   field_oc_widgets: true
+  field_use_as_background: true
   panelizer: true

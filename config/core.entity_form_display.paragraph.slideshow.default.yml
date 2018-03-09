@@ -1,11 +1,13 @@
-uuid: 7b8ec08f-c7ef-4185-ae60-1a70a0dd350c
+uuid: 5a60ae14-90c8-4c5f-9625-c7d4ff162961
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_form_mode.media.media_browser
     - field.field.paragraph.slideshow.field_admin_description
     - field.field.paragraph.slideshow.field_layout
     - field.field.paragraph.slideshow.field_oc_image_multi
+    - field.field.paragraph.slideshow.field_viewfield
     - field.field.paragraph.slideshow.field_widget_title
     - paragraphs.paragraphs_type.slideshow
   module:
@@ -35,7 +37,7 @@ content:
   field_oc_image_multi:
     weight: 3
     settings:
-      form_mode: default
+      form_mode: media_browser
       label_singular: ''
       label_plural: ''
       allow_new: true
@@ -57,5 +59,6 @@ content:
     region: content
 hidden:
   created: true
+  field_viewfield: true
   status: true
   uid: true

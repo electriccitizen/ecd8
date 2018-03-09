@@ -1,4 +1,4 @@
-uuid: 26851ccb-19c0-4061-8cfc-f59668679b14
+uuid: ec930e8c-0d6a-4337-bee1-071a4f56c975
 langcode: en
 status: true
 dependencies:
@@ -16,3 +16,4 @@ effects:
     data:
       width: 1200
       height: 650
+      crop_type: focal_point

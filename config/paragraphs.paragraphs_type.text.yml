@@ -1,13 +1,11 @@
-uuid: 6484c86d-61f4-4f6e-bcfb-1624fb49d99c
+uuid: 111fd10d-4cf0-49d7-b1e8-a1cccf85b4ad
 langcode: en
 status: true
-dependencies:
-  content:
-    - 'file:file:a4c7075f-9fa2-494e-b616-9a3e55642a47'
+dependencies: {  }
 _core:
   default_config_hash: c0pgHhzfGVGySPInyvr5fhglEJi830XG2zN5MWbOCGw
 id: text
 label: Text
-icon_uuid: a4c7075f-9fa2-494e-b616-9a3e55642a47
-description: ''
+icon_uuid: null
+description: null
 behavior_plugins: {  }

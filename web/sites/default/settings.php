@@ -798,8 +798,7 @@ $databases['default']['default'] = array (
 );
 $settings['install_profile'] = 'standard';
 $config_directories['sync'] = 'sites/default/files/config_AZ4CjtX09VLwqwGlJxaNnkaKtcZSWJHPb95VFfqObGKJ7Mh31zX5PMJkDdhmN6Du9CejggRUvg/sync';
-$settings['trusted_host_patterns'] = array(
-'^phpstack-156516-451575\.cloudwaysapps\.com$',);
+#$settings['trusted_host_patterns'] = array('^phpstack-156516-451575\.cloudwaysapps\.com$',);
 
 /**
  * If there is a local settings file, then include it
@@ -808,4 +807,16 @@ $local_settings = __DIR__ . "/settings.local.php";
 if (file_exists($local_settings)) {
   include $local_settings;
 }
+
+/**
+ * If there is a vm file, then include it
+ */
+$vm_settings = __DIR__ . "/settings.drupalvm.php";
+if (file_exists($vm_settings)) {
+  include $vm_settings;
+}
+
+$config_directories = array(
+  CONFIG_SYNC_DIRECTORY => '../config',
+);
 

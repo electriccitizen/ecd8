@@ -1,0 +1,11 @@
+uuid: 092a6ffa-da46-4a5d-8368-f3b591e36ef6
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: LMHeJ0nXeWQgFR0pJ-SsTu3g_OAYNslupgbIJLGezSQ
+id: mosaic_gallery
+label: 'Mosaic Gallery'
+icon_uuid: null
+description: null
+behavior_plugins: {  }

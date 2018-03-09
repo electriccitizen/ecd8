@@ -1,4 +1,4 @@
-uuid: 52cbf15c-00d8-4227-a49a-a63f5d523b82
+uuid: 5ea20e53-be18-4416-a89f-d68fe25ac545
 langcode: en
 status: true
 dependencies:
@@ -81,7 +81,7 @@ display:
         type: default
         options:
           grouping: {  }
-          row_class: ''
+          row_class: horizontal
           default_row_class: true
       row:
         type: fields

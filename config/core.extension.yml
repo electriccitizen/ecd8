@@ -10,10 +10,9 @@ module:
   breakpoint: 0
   ckeditor: 0
   color: 0
+  comment: 0
   components: 0
   config: 0
-  config_filter: 0
-  config_split: 0
   config_update: 0
   config_update_ui: 0
   contact: 0
@@ -25,6 +24,7 @@ module:
   datetime: 0
   dblog: 0
   default_content: 0
+  devel: 0
   dynamic_page_cache: 0
   easy_breadcrumb: 0
   editor: 0
@@ -34,7 +34,6 @@ module:
   entity_browser_entity_form: 0
   entity_embed: 0
   entity_reference_revisions: 0
-  environment_indicator: 0
   field: 0
   field_group: 0
   field_ui: 0
@@ -52,6 +51,7 @@ module:
   image: 0
   image_style_quality: 0
   inline_entity_form: 0
+  kint: 0
   layout_discovery: 0
   libraries: 0
   link: 0
@@ -79,12 +79,12 @@ module:
   rdf: 0
   redirect: 0
   responsive_image: 0
+  search: 0
   search_api: 0
   search_api_db: 0
   serialization: 0
   shortcut: 0
   simple_block: 0
-  stage_file_proxy: 0
   superfish: 0
   system: 0
   taxonomy: 0

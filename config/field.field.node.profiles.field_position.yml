@@ -1,10 +1,13 @@
-uuid: ff46a06b-b8ae-49a8-991f-eabb63fd0261
+uuid: c8a78697-8701-4d66-8d01-27863ce3019d
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_position
     - node.type.profiles
+    - taxonomy.vocabulary.position
+_core:
+  default_config_hash: rAL3QeAr-tUI5Ebc4mW_zLJgUzsflbN-JOu7-aqGH0A
 id: node.profiles.field_position
 field_name: field_position
 entity_type: node
@@ -15,5 +18,13 @@ required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
-settings: {  }
-field_type: string
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      position: position
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

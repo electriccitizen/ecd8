@@ -1,8 +1,9 @@
-uuid: 6907dfc5-0046-4529-933c-0fad1fae4e6a
+uuid: 67bf19f2-9e5c-4d49-a208-ee975d455810
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_form_mode.media.media_browser
     - field.field.paragraph.links_files.field_admin_description
     - field.field.paragraph.links_files.field_background_image
     - field.field.paragraph.links_files.field_background_style
@@ -62,7 +63,7 @@ content:
   field_oc_file_multi:
     weight: 5
     settings:
-      form_mode: default
+      form_mode: media_browser
       label_singular: ''
       label_plural: ''
       allow_new: true

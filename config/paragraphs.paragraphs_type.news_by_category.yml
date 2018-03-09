@@ -1,13 +1,11 @@
-uuid: 39c350cc-73d0-437a-adb6-27ceb12166a2
+uuid: 1240862b-e70c-4711-bdf7-1b707f88b0a4
 langcode: en
 status: true
-dependencies:
-  content:
-    - 'file:file:a1c43756-6b62-473b-bcb2-2eff9f5500ac'
+dependencies: {  }
 _core:
   default_config_hash: sS8VxXXJh6OaC9yc1bQfDn9JM8ySAsP7MpECMSUHOWs
 id: news_by_category
 label: 'News by Category'
-icon_uuid: a1c43756-6b62-473b-bcb2-2eff9f5500ac
-description: ''
+icon_uuid: null
+description: null
 behavior_plugins: {  }

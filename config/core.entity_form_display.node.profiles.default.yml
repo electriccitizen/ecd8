@@ -1,9 +1,9 @@
-uuid: 28d9bfda-6e07-45d2-9c14-ef551cf14e6a
+uuid: 5c8933ff-9848-467c-8eeb-9b343fdaeb90
 langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_form_mode.media.background_image
+    - core.entity_form_mode.media.media_browser
     - field.field.node.profiles.body
     - field.field.node.profiles.field_email
     - field.field.node.profiles.field_first_name
@@ -67,17 +67,15 @@ content:
     type: telephone_default
     region: content
   field_position:
-    weight: 2
-    settings:
-      size: 60
-      placeholder: ''
+    weight: 3
+    settings: {  }
     third_party_settings: {  }
-    type: string_textfield
+    type: options_select
     region: content
   field_profile_image:
-    weight: 3
+    weight: 2
     settings:
-      form_mode: background_image
+      form_mode: media_browser
       label_singular: ''
       label_plural: ''
       allow_new: true
@@ -99,9 +97,12 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 8
+    weight: 120
     region: content
     third_party_settings: {  }
+  url_redirects:
+    weight: 50
+    region: content
 hidden:
   created: true
   panelizer: true

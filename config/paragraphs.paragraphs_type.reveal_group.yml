@@ -1,0 +1,11 @@
+uuid: cb7ef190-40e2-42c1-ae34-3ca17940a47b
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: MevrZu8rBY2JjEcaC7973RBg7YGNkAowOe1pb50jOMU
+id: reveal_group
+label: 'Reveal Group'
+icon_uuid: null
+description: null
+behavior_plugins: {  }

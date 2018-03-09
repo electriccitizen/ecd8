@@ -1,4 +1,4 @@
-uuid: 4db9b4db-6b9c-4353-b3fa-b97837d405d1
+uuid: 62a8c78c-3a53-4066-891a-98d6b832e0e5
 langcode: en
 status: true
 dependencies:
@@ -10,5 +10,5 @@ _core:
 id: likert_agreement
 label: 'Likert: Agreement'
 category: Likert
-likert: true
+likert: false
 options: "1: Much Worse\n2: Somewhat Worse\n3: About the Same\n4: Somewhat Better\n5: Much Better\n"

@@ -1,0 +1,22 @@
+uuid: 5a9edf7f-7310-4605-82ef-138b8236f9fe
+langcode: en
+status: true
+dependencies:
+  module:
+    - search
+  theme:
+    - oc_patterns
+_core:
+  default_config_hash: lvDwHRTXj5K7OuR7CKPGcFqRVXv19Tap6uh2LH-UoDU
+id: oc_patterns_search
+theme: oc_patterns
+region: header
+weight: -4
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: Search
+  provider: search
+  label_display: '0'
+visibility: {  }

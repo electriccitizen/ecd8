@@ -1,0 +1,22 @@
+uuid: 96b1b556-31a4-4d66-ac6e-0ec9b979c67a
+langcode: en
+status: true
+dependencies:
+  module:
+    - entity_reference_revisions
+    - paragraphs
+_core:
+  default_config_hash: QFElmAjyfwNkSbCNM3g4zWYq-TPgvXDWbZ6AT5Kh9CU
+id: paragraph.field_mosaic_tiles
+field_name: field_mosaic_tiles
+entity_type: paragraph
+type: entity_reference_revisions
+settings:
+  target_type: paragraph
+module: entity_reference_revisions
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

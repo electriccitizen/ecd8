@@ -1,11 +1,11 @@
-uuid: d24d0ff7-d28f-441e-b4db-21bc13b4d601
+uuid: aff37fce-173d-4b1f-9e8b-d9bbab3daaf1
 langcode: en
 status: true
 dependencies: {  }
 id: NXhscRe0440PFpI5dSznEVgmauL25KojD7u4e9aZwOM
-label: 'http://dev-newupstream.pantheonsite.io/'
+label: 'http://default/'
 chunks: 1
-links: 30
-max_filesize: 6492
+links: 1
+max_filesize: 257
 context: {  }
-updated: 1515686826
+updated: 1520540843
