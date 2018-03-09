@@ -71,6 +71,9 @@ jobs:
       #- run: drush @self site-install oc -y
       # Install Drupal.
       - run:
+          name: install
+          command: drush @test si standard -y
+      - run:
           name: Install site
           command: drush @test cim
       #- run:
