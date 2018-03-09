@@ -66,7 +66,7 @@ jobs:
       - run: drush site-alias @self --root=/home/circleci/site_build/web --full --with-optional >> ~/.drush/test.aliases.drushrc.php
       - run: drush status --root=/home/circleci/site_build/web
       #- run: drush si oc --root=/home/circleci/site_build/web -y
-      - run: cd /home/circleci/site_build/web/sites/default
+      - run: cd /home/circleci/site_build/web
       - run: drush status  --root=/home/circleci/site_build/web
       #- run: drush @self site-install oc -y
       # Install Drupal.
