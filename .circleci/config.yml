@@ -38,6 +38,7 @@ jobs:
           name: Install mysql-client
           command: |
             sudo apt-get install mysql-client
+      - run: mysql -h 127.0.0.1 -u root
       - checkout
       - run: php -v
       - run: sudo cp .circleci/tests/circle/circle.conf /etc/apache2/sites-available
