@@ -72,7 +72,7 @@ jobs:
       # Install Drupal.
       - run:
           name: install
-          command: drush @test si standard -y
+          command: drush @test si standard install_configure_form.enable_update_status_module=NULL -y
       - run:
           name: Install site
           command: drush @test cim
