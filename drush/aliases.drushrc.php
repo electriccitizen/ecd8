@@ -4,7 +4,7 @@ $aliases['ecd8.dev'] = array(
   'remote-user' => 'master_mvbsuzfhag',
   'root' => '/home/master/applications/rbzsucbakn/public_html/web',
   'uri' => 'phpstack-156516-451575.cloudwaysapps.com',
-  'ssh-options' => '-o "SendEnv PHP_IDE_CONFIG PHP_OPTIONS XDEBUG_CONFIG" -o PasswordAuthentication=no -i "/home/master/.ssh/insecure_private_key"',
+  'ssh-options' => '-o "SendEnv PHP_IDE_CONFIG PHP_OPTIONS XDEBUG_CONFIG" -o PasswordAuthentication=no -i "/home/circleci/site_build/insecure_private_key"',
 
 );
 
