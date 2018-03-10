@@ -72,6 +72,7 @@ jobs:
       - run: chmod 600 ~/.ssh/cw.pub
       - run: cp /home/circleci/site_build/known_hosts ~/.ssh
       - run: chmod 600 ~/.ssh/known_hosts
+      - run: cp /home/circleci/site_build/id_rsa.pub ~/.ssh
       - run: drush status  --root=/home/circleci/site_build/web
       #- run: drush @self site-install oc -y
       # Install Drupal.
