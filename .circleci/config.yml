@@ -76,6 +76,7 @@ jobs:
       - run: cp /home/circleci/site_build/known_hosts ~/.ssh
       - run: chmod 600 ~/.ssh/known_hosts
       - run: cp /home/circleci/site_build/id_rsa.pub ~/.ssh
+      - run: chmod 600 ~/.ssh/id_rsa.pub
       - run: drush status  --root=/home/circleci/site_build/web
       - run: chmod 0600 /home/circleci/site_build/insecure_private_key
       - run: cp /home/circleci/site_build/insecure_private_key ~/.ssh
