@@ -1,0 +1,10 @@
+Host default
+  HostName 192.241.140.130
+  User master_mvbsuzfhag
+  Port 22
+  UserKnownHostsFile /dev/null
+  StrictHostKeyChecking no
+  PasswordAuthentication no
+  IdentityFile /home/circleci/.ssh/id_rsa
+  IdentitiesOnly yes
+  LogLevel FATAL
