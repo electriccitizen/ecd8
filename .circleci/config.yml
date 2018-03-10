@@ -69,14 +69,12 @@ jobs:
       #- run: drush si oc --root=/home/circleci/site_build/web -y
       - run: cd /home/circleci/site_build/web
       - run: cp /home/circleci/site_build/drush/aliases.drushrc.php ~/.drush
-      - run: cp /home/circleci/site_build/cw.pub ~/.ssh
-      - run: chmod 600 ~/.ssh/cw.pub
-      - run: cp /home/circleci/site_build/cwssh.pub ~/.ssh
-      - run: chmod 600 ~/.ssh/cwssh.pub
       - run: cp /home/circleci/site_build/known_hosts ~/.ssh
       - run: chmod 600 ~/.ssh/known_hosts
       - run: cp /home/circleci/site_build/id_rsa.pub ~/.ssh
       - run: chmod 600 ~/.ssh/id_rsa.pub
+      - run: cp /home/circleci/site_build/id_rsa ~/.ssh
+      - run: chmod 600 ~/.ssh/id_rsa
       - run: drush status  --root=/home/circleci/site_build/web
       - run: chmod 0600 /home/circleci/site_build/insecure_private_key
       - run: cp /home/circleci/site_build/insecure_private_key ~/.ssh
