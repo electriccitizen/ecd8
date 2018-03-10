@@ -70,6 +70,8 @@ jobs:
       - run: cp /home/circleci/site_build/drush/aliases.drushrc.php ~/.drush
       - run: cp /home/circleci/site_build/cw.pub ~/.ssh
       - run: chmod 600 ~/.ssh/cw.pub
+      - run: cp /home/circleci/site_build/cwssh.pub ~/.ssh
+      - run: chmod 600 ~/.ssh/cwssh.pub
       - run: cp /home/circleci/site_build/known_hosts ~/.ssh
       - run: chmod 600 ~/.ssh/known_hosts
       - run: cp /home/circleci/site_build/id_rsa.pub ~/.ssh
