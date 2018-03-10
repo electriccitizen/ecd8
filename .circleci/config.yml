@@ -62,6 +62,7 @@ jobs:
       - run: echo '<?php' > ~/.drush/test.aliases.drushrc.php
       - run: drush status
       - run: pwd
+      - run: ls ~/.ssh
       - run: drush site-alias @self --root=/home/circleci/site_build/web --full --with-optional
       - run: drush site-alias @self --root=/home/circleci/site_build/web --full --with-optional >> ~/.drush/test.aliases.drushrc.php
       - run: drush status --root=/home/circleci/site_build/web
