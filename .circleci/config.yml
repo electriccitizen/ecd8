@@ -89,8 +89,8 @@ jobs:
           command: drush cache-clear drush
       - run:
           name: Import database
-          #command: drush @ecd8.dev status
-          command: drush sql-sync @ecd8.dev @test
+          command: drush @ecd8.dev status
+          #command: drush sql-sync @ecd8.dev @test
       - run:
           name: Import config
           command: drush @test cim
