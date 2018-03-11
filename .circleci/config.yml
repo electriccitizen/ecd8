@@ -95,6 +95,9 @@ jobs:
       - run:
           name: Import database
           command: drush @test status
+      - run:
+          name: Import database
+          command: drush sql-sync @ecd8.dev @test -y
       # - run:
       #    name: Import config
       #    command: drush @test cim -y
