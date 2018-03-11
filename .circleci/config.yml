@@ -100,8 +100,11 @@ jobs:
           name: SQL conf
           command: drush @self sql-conf
       - run:
+          name: Export database
+          command: drush @ec8.dev sql-dump > db.sql
+      - run:
           name: Import database
-          command: drush sql-sync @ecd8.dev @self -y --debug
+          command: drush @test sql-cli < db.sql
       # - run:
       #    name: Import config
       #    command: drush @test cim -y
