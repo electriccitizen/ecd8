@@ -10,11 +10,10 @@ $aliases['ecd8.dev-old'] = array(
 
 $aliases['ecd8.dev'] = array(
   'uri' => 'phpstack-156516-451575.cloudwaysapps.com',
-  'db-allows-remote' => TRUE,
   'remote-host' => '192.241.140.130',
   'remote-user' => 'worm',
   'root' => '/home/master/applications/rbzsucbakn/public_html/web',
-  'ssh-options' => '-o "SendEnv PHP_IDE_CONFIG PHP_OPTIONS XDEBUG_CONFIG" -o  PasswordAuthentication=no -i "~/.ssh/worm_id_rsa"',
+  'ssh-options' => '-o "SendEnv PHP_IDE_CONFIG PHP_OPTIONS XDEBUG_CONFIG" -o  PasswordAuthentication=no -i "~/.ssh/id_rsa"',
 
 );
 
