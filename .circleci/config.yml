@@ -84,8 +84,8 @@ jobs:
       #- run: drush @self site-install oc -y
       # Install Drupal.
       - run:
-        name: install
-        command: drush @self si standard install_configure_form.enable_update_status_module=NULL -y
+          name: install
+          command: drush @self si standard install_configure_form.enable_update_status_module=NULL -y
       # Import DB.
       - run:
           name: Drush cache
