@@ -804,9 +804,12 @@ $config_directories['sync'] = 'sites/default/files/config_AZ4CjtX09VLwqwGlJxaNnk
 /**
  * If there is a vm file, then include it
  */
-$vm_settings = __DIR__ . "/settings.drupalvm.php";
-if (file_exists($vm_settings)) {
-  include $vm_settings;
+
+if ($_SERVER['SERVER_ADDR'] == '192.168.88.111') {
+  $vm_settings = __DIR__ . "/settings.drupalvm.php";
+  if (file_exists($vm_settings)) {
+    include $vm_settings;
+  }
 }
 
 
