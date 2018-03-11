@@ -95,10 +95,10 @@ jobs:
           command: drush @ecd8.dev status
       - run:
           name: Circle CI status
-          command: drush @test status
+          command: drush @self status
       - run:
           name: Import database
-          command: drush sql-sync @ecd8.dev @test -y --debug
+          command: drush sql-sync @ecd8.dev @self -y --debug
       # - run:
       #    name: Import config
       #    command: drush @test cim -y
