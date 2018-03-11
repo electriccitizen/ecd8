@@ -80,6 +80,7 @@ jobs:
       - run: drush status  --root=/home/circleci/site_build/web
       - run: chmod 0600 /home/circleci/site_build/insecure_private_key
       - run: cp /home/circleci/site_build/insecure_private_key ~/.ssh
+      - run: cd /home/circleci/site_build/web/sites/default
       #- run: drush @self site-install oc -y
       # Install Drupal.
       #- run:
