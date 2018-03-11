@@ -95,10 +95,10 @@ jobs:
           command: drush @ecd8.dev status
       - run:
           name: Circle CI status
-          command: drush @self status
+          command: drush @test status
       - run:
           name: SQL conf
-          command: drush @self sql-conf
+          command: drush @test sql-conf
       - run:
           name: Export database
           command: drush @ecd8.dev sql-dump > db.sql
