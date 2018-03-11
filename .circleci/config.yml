@@ -104,7 +104,7 @@ jobs:
           command: drush @ecd8.dev sql-dump > db.sql
       - run:
           name: Import database
-          command: drush @test sql-cli < db.sql
+          command: drush @test sql-cli < db.sql -y
       # - run:
       #    name: Import config
       #    command: drush @test cim -y
