@@ -97,6 +97,9 @@ jobs:
           name: Circle CI status
           command: drush @test status
       - run:
+          name: SQL conf
+          command: drush @test sql-conf
+      - run:
           name: Import database
           command: drush sql-sync @ecd8.dev @test -y --debug
       # - run:
