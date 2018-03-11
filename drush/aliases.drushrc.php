@@ -20,3 +20,14 @@ $aliases['ecd8.local'] = array(
   ),
 );
 
+
+$aliases["ecd8.circle"] = array (
+  'root' => '/home/circleci/site_build/web',
+  'uri' => 'http://default',
+  'path-aliases' =>
+    array (
+      '%drush' => '/home/circleci/site_build/vendor/drush/drush',
+      '%site' => 'sites/default/',
+    ),
+);
+
