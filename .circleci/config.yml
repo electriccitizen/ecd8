@@ -83,9 +83,9 @@ jobs:
       - run: cd /home/circleci/site_build/web/sites/default
       #- run: drush @self site-install oc -y
       # Install Drupal.
-      #- run:
-      #    name: install
-      #    command: drush @self si oc install_configure_form.enable_update_status_module=NULL -y
+      - run:
+        name: install
+        command: drush @self si standard install_configure_form.enable_update_status_module=NULL -y
       # Import DB.
       - run:
           name: Drush cache
