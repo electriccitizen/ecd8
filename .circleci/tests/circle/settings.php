@@ -10,7 +10,7 @@
 
 $databases['default']['default'] = array(
   'driver' => 'mysql',
-  'database' => 'rbzsucbakn',
+  'database' => 'circle_test',
   'username' => 'root',
   'password' => 'ubuntu',
   'host' => '127.0.0.1',
