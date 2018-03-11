@@ -1,9 +1,9 @@
-name: Site-Install
+name: 'Yer Mom'
 mail: admin@example.com
 slogan: ''
 page:
   403: ''
-  404: /search404
+  404: ''
   front: /node
 admin_compact_mode: false
 weight_select_max: 100
