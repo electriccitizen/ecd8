@@ -1,7 +1,7 @@
 <?php
 $aliases['ecd8.dev'] = array(
   'remote-host' => '192.241.140.130',
-  'remote-user' => 'master_mvbsuzfhag',
+  'remote-user' => 'worm',
   'root' => '/home/master/applications/rbzsucbakn/public_html/web',
   'uri' => 'phpstack-156516-451575.cloudwaysapps.com',
   'ssh-options' => '-o "SendEnv PHP_IDE_CONFIG PHP_OPTIONS XDEBUG_CONFIG" -o  PasswordAuthentication=no -i "/home/circleci/.ssh/id_rsa"',
