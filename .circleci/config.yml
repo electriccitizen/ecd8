@@ -106,11 +106,12 @@ jobs:
           name: Import database
           command: drush @test sql-cli < db.sql -y
       - run:
+          name: Import config
+          command: drush @test cim -y
+      - run:
           name: git pull
           command: curl -X POST --header 'Content-Type: application/x-www-form-urlencoded' --header 'Accept: application/json' --header 'Authorization: Bearer fKDUoBg6DbEkE36xpcZygjv8tc697HiEW86rLhvz' -d 'server_id=156516&app_id=451575&git_url=git%40github.com%3Aelectriccitizen%2Fecd8.git&branch_name=master' 'https://api.cloudways.com/api/v1/git/pull'
-      # - run:
-      #    name: Import config
-      #    command: drush @test cim -y
+
       #- run:
       #    name: Run tests
       #    command: cd web/core; ../../vendor/bin/phpunit ../modules/custom/utexas_qualtrics_filter/tests/src/Unit/FilterQualtricsTest.php
