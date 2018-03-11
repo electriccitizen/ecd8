@@ -90,10 +90,10 @@ jobs:
           name: Drush cache
           command: drush cache-clear drush
       - run:
-          name: Import database
+          name: Remote status
           command: drush @ecd8.dev status
       - run:
-          name: Import database
+          name: Circle CI status
           command: drush @test status
       - run:
           name: Import database
