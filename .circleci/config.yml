@@ -91,10 +91,10 @@ jobs:
           command: drush cache-clear drush
       - run:
           name: Import database
-          command: drush sql-sync @ecd8.dev @self
+          command: drush sql-sync @ecd8.dev @self -y
       - run:
           name: Import config
-          command: drush @test cim
+          command: drush @test cim -y
       #- run:
       #    name: Run tests
       #    command: cd web/core; ../../vendor/bin/phpunit ../modules/custom/utexas_qualtrics_filter/tests/src/Unit/FilterQualtricsTest.php
