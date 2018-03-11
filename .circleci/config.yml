@@ -110,7 +110,7 @@ jobs:
           #command: drush @self status
           #command: 'curl -X POST --header Content-Type: application/x-www-form-urlencoded --header Accept: application/json --header Authorization: Bearer fKDUoBg6DbEkE36xpcZygjv8tc697HiEW86rLhvz -d server_id=156516&app_id=451575&git_url=git%40github.com%3Aelectriccitizen%2Fecd8.git&branch_name=master https://api.cloudways.com/api/v1/git/pull'
           command: "curl -X POST --header 'Content-Type: application/x-www-form-urlencoded' --header 'Accept: application/json' --header 'Authorization: Bearer fd7quaH5YBtKFHfr2PBAgswiRQGwFALj5OUCLz3T' -d 'server_id=156516&app_id=451575&git_url=git%40github.com%3Aelectriccitizen%2Fecd8.git&branch_name=master' 'https://api.cloudways.com/api/v1/git/pull'"
-
+          when: on_success
                 # - run:
       #    name: Import config
       #    command: drush @test cim -y
